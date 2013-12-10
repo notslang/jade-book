@@ -1,14 +1,67 @@
-!= title_with_markup()
+!!!
+html
+  head
+    meta(charset='utf8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(name='description', content='description of your site')
+    meta(name='author', content= "author of the site")
+    link(rel="stylesheet", href="/css/default.css")
+    link(rel='stylesheet', href='css/master.css')
 
-:markdown
-  **Whoo!** You got everything working. Now get to making cool things : )
+    title= title
+  body
+    chapter 1
+    include _ch1.md
 
-p this file can be found in views/index.jade
+    chapter 2
+    include _ch2.md
 
-include _partial
+    chapter 3
+    include _ch3.md
 
-:markdown
-  For help and documentation, check out [http://roots.cx](http://roots.cx)
+    chapter 4
+    include _ch4.md
 
-:coffeescript
-  console.log 'you can even use coffeescript in your views, aw yeah'
+    chapter 5
+    include _ch5.md
+
+    chapter 6
+    include _ch6.md
+
+    chapter 7
+    include _ch7.md
+
+    chapter 8
+    include _ch8.md
+
+
+    script(src="/js/jquery.js")
+    script(src="/js/highlight.pack.js")
+    :coffeescript
+        $ ->
+            last_element = undefined
+            $('pre code').each((i, e) ->
+                # remove the "lang-" prefix from class names
+                name = $(e).attr('class')[5..]
+                if name is 'html' then name = 'xml'
+                if name is 'js' then name = 'javascript'
+                $(e).attr('class', name)
+
+                if $(e).parent().prev()[0].tagName isnt 'PRE'
+                    last_element = undefined
+
+                classes = [$(last_element).attr('class'), name]
+                if 'xml' in classes and 'jade' in classes
+                    # if html is followed by jade, both are 1/2 width
+                    $(last_element).parent().attr('class', 'side-by-side')
+                    $(e).parent().attr('class', 'side-by-side')
+                    last_element = undefined
+                else if classes[0] is 'bash' and classes[1] in ['javascript', 'xml']
+                    # if bash is followed by certain things, remove margin
+                    $(last_element).parent().attr('class', 'joined')
+                    $(e).parent().attr('class', 'joined')
+                    last_element = undefined
+                else
+                    last_element = e
+            )
+            hljs.initHighlightingOnLoad()
