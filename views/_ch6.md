@@ -34,8 +34,6 @@ ul#books
 
 Simpler mixins don’t even need to accept arguments, and can be called without args too:
 
-
-
 ```jade
 mixin copyleft
   | (&#596;) 
@@ -52,6 +50,7 @@ p
 ###Passing Blocks
 Besides just being able to pass arguments, you can also pass entire blocks to a mixin:
 
+```jade
 mixin input(name)
   li(id=name.replace(/\s/g, '-'))
     label= name + ':'
@@ -62,6 +61,9 @@ form: ul
     input('type'='text')
   +input('comments')
     textarea Type your comment here.
+```
+
+```html
 <form>
   <ul>
     <li id="favorite-color">
@@ -74,40 +76,54 @@ form: ul
     </li>
   </ul>
 </form>
+```
 
 The block that will be passed to the mixin is whatever indented block comes after the mixin call. It is just like the way in which whatever indented block comes after a tag is nested in that tag, except here they are passed to the mixin. In this case, `input('type'='text')` and `textarea Type your comment here.` are the passed blocks. Inside the mixin, the `block` keyword tells Jade where to put the contents of the block that is passed to it.
 
 At the same time, the mixin also takes the `name` arg which is used to make the id and label.
 
-##A Warning About Interpolation
+##Another Warning About Interpolation
 Back in chapter 3 I mentioned that interpolation doesn’t work in the arguments used to call a mixin. Now that we know how to write mixins we need to be careful not to use interpolation when we’re calling them. For example:
 
+```jade
 mixin hello(p)
   | #{p}
 
 title = "This is my Title"
-mixin hello('#{title}')
-#{title}
+p
+  mixin hello('#{title}')
+```
+
+```html
+p  #{title}
+```
 
 If interpolation did work in mixin arguments then this would output `This is my Title` rather than `#{title}`.
 
 This gotcha has existed since Jade’s creation, and has been discussed on multiple occasions (see: https://github.com/visionmedia/jade/issues/693) but probably won’t be changed any time soon.
-Arguments Object
+
+##Arguments Object
 Just as the `arguments` object is a local variable available in JavaScript objects, it is available in Jade mixins. In fact, it is used frequently in Jade to make mixins that accept a variable number of args.
+
+```jade
 mixin list()
-  ul= arguments[0]
+  ul
     - var args = Array.prototype.slice.call(arguments);
     for item in args
       li= item
       
 +list('one', 'two', 'three')
-<ul>one
+```
+
+```html
+<ul>
   <li>one</li>
   <li>two</li>
   <li>three</li>
 </ul>
+```
 
-In the above example, we define a mixin (`list`) that appears to take no arguments, but in fact iterates over an array created from the `arguments` object. It is worth noting that we cannot iterate over `arguments` itself, because it is not a real array. Instead, we use `- var args = Array.prototype.slice.call(arguments);` to make an array called `args` from the `arguments` object.
+In the above example, we define a mixin (`list`) that appears to take no arguments, but in fact iterates over an array created from the `arguments` object. It is worth noting that we cannot iterate over `arguments` itself, because it is **not a real array**. Instead, we use `- var args = Array.prototype.slice.call(arguments);` to make an array called `args` from the `arguments` object.
 
 ##Summary
 We just finished learning about mixins, a way to write reusable functions inside of templates in order to reduce redundancy.

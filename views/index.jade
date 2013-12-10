@@ -42,7 +42,7 @@ html
             last_element = undefined
             $('pre code').each((i, e) ->
                 # remove the "lang-" prefix from class names
-                name = $(e).attr('class')[5..]
+                name = ($(e).attr('class') or '')[5..]
                 if name is 'html' then name = 'xml'
                 if name is 'js' then name = 'javascript'
                 $(e).attr('class', name)
