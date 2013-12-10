@@ -23,7 +23,7 @@ An easy point to draw the border between “business” and “presentation” i
 
 An additional advantage of this separation is that the JSON data can be passed to a template over stdio (to the server-side Jade compiler), or it can be passed over TCP/IP (to be evaluated client-side). Since the template only formats the given data, it doesn’t matter where it is rendered, and can be used on both server and client.
 
-![](/img/SoC.svg)
+![](img/SoC.svg)
 
 -----------------------
 
@@ -107,7 +107,7 @@ We could still use some client-side Jade for enhancements, but the idea is the s
 
 Although the Jade compiler is fully capable of compiling projects on its own, in practice it is often better to use a build system because they can make interfacing with the compiler easier. In addition, build systems often help automate other tasks like minification, compiling other languages, and even deployment. Some examples of these build systems are roots, grunt, and even GNU’s make.
 
-![](/img/roots.png) ![](/img/grunt.png)
+![](img/roots.png) ![](img/grunt.png)
 
 For example, with roots you can have your Jade recompiled automatically each time you save it, and a in-browser preview of that page refreshed. This will help you notice errors sooner, and avoid the hassle of running a command to recompile each time you want to check your progress.
 

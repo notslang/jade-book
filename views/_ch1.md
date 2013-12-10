@@ -48,7 +48,7 @@ Occasionally, people will avoid preprocessing because it *adds another step*, an
 ##How Jade Preprocesses
 In the case of Jade, this preprocessing is done by compiling templates into JS and then rendering them to HTML:
 
-![](/img/Process.svg)
+![](img/Process.svg)
 
 Because Jade's compiled templates really are just JavaScript functions that output HTML, they can be rendered on both the server and in the browser.
 
