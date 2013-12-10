@@ -20,7 +20,7 @@ Also, white space significance prevents stupid errors like this:
 
 Now onto how it actually works:
 
-![](/img/Indentation.svg)
+![](img/Indentation.svg)
 
 Each level of indentation (the rectangles outlined with dashed lines) creates a new block (the pastel-colored sections) out of each following line that is indented to that level. Each of those blocks becomes a child of the tag on the line that appears immediately before the block (notice the tags with colors that correspond to their blocks).
 
