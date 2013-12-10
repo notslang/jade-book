@@ -1,12 +1,15 @@
 #Mixins
+
 Mixins are small, encapsulated pieces of code that are reusable throughout the template. They allow you to reduce redundancy (repeating chunks of code) and can make code easier to understand by providing good names for your mixins (more about this in "Organizing Jade Projects"). Because they are encapsulated, they have their own variable scope, meaning they can prevent naming collisions that would likely happen in large templates that only use Jade’s “global” namespace.
 
 They are very similar to functions in JS - in fact they compile into slightly modified functions and corresponding function calls. This means that almost everything that you already know about functions in JS carries over to “mixins” in Jade.
 
 ##Syntax & Mechanics
+
 First off, we’re going to talk about how to write mixins; the syntax that they use, and what it does. Also, since we’ve already covered logical operations in templates, we can use those in mixins throughout the examples.
 
 ###Defining Mixins
+
 Mixins definitions don’t output any HTML and are defined using the following syntax:
 
 ```jade
@@ -17,6 +20,7 @@ mixin book(name, price)
 where `book` is the name of the mixin, and `name` & `price` are both named arguments. The indented block of Jade gets executed in its own scope, where the variables `name` and `price` are both defined with the args that are passed. So basically: it works just like you would expect a function to work.
 
 ###Calling Mixins
+
 The syntax for calling mixins is also similar to that of function calls, except we prefix the function name with a `+` to say that it isn’t a tag (which can look quite similar). So using our `book` mixin, we can call it with the following:
 
 ```jade
@@ -48,6 +52,7 @@ p
 ```
 
 ###Passing Blocks
+
 Besides just being able to pass arguments, you can also pass entire blocks to a mixin:
 
 ```jade
@@ -83,6 +88,7 @@ The block that will be passed to the mixin is whatever indented block comes afte
 At the same time, the mixin also takes the `name` arg which is used to make the id and label.
 
 ##Another Warning About Interpolation
+
 Back in chapter 3 I mentioned that interpolation doesn’t work in the arguments used to call a mixin. Now that we know how to write mixins we need to be careful not to use interpolation when we’re calling them. For example:
 
 ```jade
@@ -103,6 +109,7 @@ If interpolation did work in mixin arguments then this would output `This is my 
 This gotcha has existed since Jade’s creation, and has been discussed on multiple occasions (see: https://github.com/visionmedia/jade/issues/693) but probably won’t be changed any time soon.
 
 ##Arguments Object
+
 Just as the `arguments` object is a local variable available in JavaScript objects, it is available in Jade mixins. In fact, it is used frequently in Jade to make mixins that accept a variable number of args.
 
 ```jade
@@ -111,7 +118,7 @@ mixin list()
     - var args = Array.prototype.slice.call(arguments);
     for item in args
       li= item
-      
+
 +list('one', 'two', 'three')
 ```
 
@@ -126,4 +133,5 @@ mixin list()
 In the above example, we define a mixin (`list`) that appears to take no arguments, but in fact iterates over an array created from the `arguments` object. It is worth noting that we cannot iterate over `arguments` itself, because it is **not a real array**. Instead, we use `- var args = Array.prototype.slice.call(arguments);` to make an array called `args` from the `arguments` object.
 
 ##Summary
+
 We just finished learning about mixins, a way to write reusable functions inside of templates in order to reduce redundancy.
