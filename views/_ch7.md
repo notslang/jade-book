@@ -1,6 +1,6 @@
 #Template Inheritance
 
-##What It’s Used For
+##What It's Used For
 
 Sites generally have a basic layout which is the same across all pages, and then small "blocks" of HTML that make each page unique. To prevent you from needing to repeat this base layout in every single file, Jade uses a block system that lets you insert interchangeable blocks into templates.
 
@@ -47,7 +47,7 @@ html
 </html>
 ```
 
-By default, the only script that’s on the page is jQuery; there are no styles, and in the body there is a short message explaining that there’s no content on the page. That’s pretty boring, so next we’re going to learn how to extend this page to make it better.
+By default, the only script that's on the page is jQuery; there are no styles, and in the body there is a short message explaining that there's no content on the page. That's pretty boring, so next we're going to learn how to extend this page to make it better.
 
 ##Extends
 
@@ -80,7 +80,7 @@ block content
 </html>
 ```
 
-I also redefined the `content` block to be blank, because you don’t necessarily need to pass new content.
+I also redefined the `content` block to be blank, because you don't necessarily need to pass new content.
 
 ##Append
 
@@ -163,7 +163,7 @@ p {
 
 ```html
 <h1>includes</h1>
-<p>this is a file for demonstrating the use of includes in jade</p>
+<p>this is a file for demonstrating the use of includes in Jade</p>
 ```
 
 *example.jade (in the same directory as style.css)*
@@ -190,7 +190,7 @@ p {
   </head>
   <body>
 <h1>includes</h1>
-<p>this is a file for demonstrating the use of includes in jade</p>
+<p>this is a file for demonstrating the use of includes in Jade</p>
   </body>
 </html>
 ```
@@ -215,7 +215,7 @@ p
 
 ```markdown
 #includes
-this is a file for demonstrating the use of includes in jade
+this is a file for demonstrating the use of includes in Jade
 ```
 
 *filters.jade (in the same directory as style.styl)*
@@ -242,7 +242,7 @@ p {
   </head>
   <body>
 <h1>includes</h1>
-<p>this is a file for demonstrating the use of includes in jade</p>
+<p>this is a file for demonstrating the use of includes in Jade</p>
   </body>
 </html>
 ```
@@ -251,7 +251,7 @@ p {
 
 ###Jade
 
-If you are including a Jade file, then rather than compiling it into HTML, it will be parsed and the AST (Abstract Syntax Tree) will be injected into the spot where the include was. This means that even variables behave as if they were written in the same file. Also, if you’re including a Jade file, you don’t need to use the `.jade` file extension.
+If you are including a Jade file, then rather than compiling it into HTML, it will be parsed and the AST (Abstract Syntax Tree) will be injected into the spot where the include was. This means that even variables behave as if they were written in the same file. Also, if you're including a Jade file, you don't need to use the `.jade` file extension.
 
 *book-format.jade*
 

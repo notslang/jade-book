@@ -2,7 +2,7 @@
 Ok, now that we know how to send data to templates and display them in the resulting HTML, we can actually make useful templates. However, sometimes we need a little a little more power. For that, we turn to logical operations.
 
 ##Adding Logic with JavaScript
-As I’ve already mentioned, Jade compiles into JS and allows you to use JS directly in your template. So, we can use any of the logical operators that JS provides to build our markup.
+As I've already mentioned, Jade compiles into JS and allows you to use JS directly in your template. So, we can use any of the logical operators that JS provides to build our markup.
 
 ###If / Else
 The most basic logical operator is the if statement:
@@ -35,7 +35,7 @@ h1 #{greeting} #{name}
 
 ------------------------
 **ProTip**
-Switches don’t work. Use the `case` statement that is explained in the next section.
+Switches don't work. Use the `case` statement that is explained in the next section.
 
 ------------------------
 
@@ -61,7 +61,7 @@ ul
 ```
 
 ###Complex Operations
-Generally, you should keep complex operations outside of your templates, but it’s worth noting that you can do pretty extensive data manipulation.
+Generally, you should keep complex operations outside of your templates, but it's worth noting that you can do pretty extensive data manipulation.
 
 ```jade
 - String.prototype.title_case = function() {
@@ -70,7 +70,7 @@ Generally, you should keep complex operations outside of your templates, but it�
 -   });
 - };
 
-p=”this is a title”.title_case()
+p="this is a title".title_case()
 ```
 
 ```html
@@ -79,7 +79,7 @@ p=”this is a title”.title_case()
 
 
 ##Built-in Logical Operators
-Writing JS can start to look ugly and doesn’t really match with the indentation-based syntax that Jade uses, so we have several built-in logical operators that do the same thing, but are easier to write.
+Writing JS can start to look ugly and doesn't really match with the indentation-based syntax that Jade uses, so we have several built-in logical operators that do the same thing, but are easier to write.
 
 Here are a few examples:
 
@@ -89,7 +89,7 @@ Here are a few examples:
 name = "Bob"
 if name == "Bob"
   h1 Hello Bob
-else if name == “Joe”
+else if name == "Joe"
   h1 Hello Joe
 else
   h1 My name is #{name}
@@ -220,7 +220,7 @@ p #{title}
 <p>Hello #{there}</p>
 ```
 
-If interpolation worked in code, then it would print out `Hello foo`. The reason why interpolation can’t be used in code blocks is because vanilla JS has no interpolation, and very little processing is done to the code before it is executed (even the built in shorthands). So allowing interpolation in these places would require extensive re-writing of the code blocks during compilation. However, once Template Strings are implemented in ES6 (the next version of JavaScript) this won’t be an issue.
+If interpolation worked in code, then it would print out `Hello foo`. The reason why interpolation can't be used in code blocks is because vanilla JS has no interpolation, and very little processing is done to the code before it is executed (even the built in shorthands). So allowing interpolation in these places would require extensive re-writing of the code blocks during compilation. However, once Template Strings are implemented in ES6 (the next version of JavaScript) this won't be an issue.
 
 ##Summary
-Often, we need a bit more power than just outputting the text that’s passed to our templates. For that, we have logical operations that we can use in templates. In this chapter, we covered flow control structures, like `if`, `else`, `case`, `for`, and `while`. Also, we discussed adding more advanced logic with raw JavaScript.
+Often, we need a bit more power than just outputting the text that's passed to our templates. For that, we have logical operations that we can use in templates. In this chapter, we covered flow control structures, like `if`, `else`, `case`, `for`, and `while`. Also, we discussed adding more advanced logic with raw JavaScript.

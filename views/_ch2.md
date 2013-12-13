@@ -31,7 +31,7 @@ Most editors let you manipulate entire blocks of code by selecting several lines
 ------------------------
 
 ##Tags
-Since Jade is indentation-based, there are no end tags, and there are no “s or“s to surround the tags because those are lame and ugly. The name of the tag is all that you need, and it is the first text on the line. Consider the following example:
+Since Jade is indentation-based, there are no end tags, and there are no `<`s or `>`s to surround tags, because those are lame and ugly. The name of the tag is all that you need, and it is the first text on the line. Consider the following example:
 
 ```jade
 p
@@ -113,7 +113,7 @@ p
 ```
 
 ###Shorthand text blocks
-If all you have is a big block of text or code, adding all those pipe characters can be a pain. So Jade provides a shorthand method for indicating that all the nested code in an element are text blocks. This is represented by a  "." after the tag as follows:
+If all you have is a big block of text or code, adding all those pipe characters can be a pain. So Jade provides a shorthand method for indicating that all the nested code in an element are text blocks. This is represented by a `.` after the tag as follows:
 
 ```jade
 p.

@@ -13,7 +13,7 @@ Let's start with a simple example. First we have HTML, and then the same thing r
     <h1>Meet Jade</h1>
     <p>
       A simple Jade example.
-      You’ll learn to write
+      You'll learn to write
       all of this in ch 2.
     </p>
     <p>Jade FTW!</p>
@@ -29,7 +29,7 @@ html
     h1 Meet Jade
     p.
       A simple Jade example.
-      You’ll learn to write
+      You'll learn to write
       all of this in ch 2.
     p Jade FTW!
 ```
@@ -82,7 +82,7 @@ To install the Jade compiler, you first need to have Node.js installed. This is 
 $ npm install jade -g
 ```
 
-(the `-g` installs Jade globally - without it you wouldn’t be able to use the jade command)
+(the `-g` installs Jade globally - without it you wouldn't be able to use the `jade` command)
 
 ##Compiling Jade
 Now that you have Jade installed, you can use the `jade` command to compile Jade files. For example, if we put some Jade in a file:
@@ -155,7 +155,7 @@ buf.push("<h1>Some Jade</h1>");;return buf.join("");
 }
 ```
 
-The JS resulting from that could still be optimized a little bit more (and likely will be in future versions of the compiler) but since it’s just machine-generated JS, it’s not a huge issue. The important part is that this JS can be executed on the client-side to render templates dynamically. This will be covered more in chapter 4.
+The JS resulting from that could still be optimized a little bit more (and likely will be in future versions of the compiler) but since it's just machine-generated JS, it's not a huge issue. The important part is that this JS can be executed on the client-side to render templates dynamically. This will be covered more in chapter 4.
 
 ##Summary
 In this chapter, we learned the idea behind preprocessors, and why Jade is awesome. Also, we learned the process Jade uses to compile templates, and how to install/use Jade.

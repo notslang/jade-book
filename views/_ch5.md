@@ -1,8 +1,8 @@
 #Filters
-Much like how Jade is better than writing HTML, there are preprocessed languages for writing other languages. These include languages that compile into CSS, JS, and even specialized subsets of HTML for basic formatting. This book will not attempt to teach any of these to you because, honestly there are already great resources out there for learning all of them. However, it is worth mentioning these languages because Jade has a feature called “filters” that allows you to use several of them right inside your templates.
+Much like how Jade is better than writing HTML, there are preprocessed languages for writing other languages. These include languages that compile into CSS, JS, and even specialized subsets of HTML for basic formatting. This book will not attempt to teach any of these to you because, honestly there are already great resources out there for learning all of them. However, it is worth mentioning these languages because Jade has a feature called "filters" that allows you to use several of them right inside your templates.
 
 ##The Full List
-Thanks to a library called “transformers” by Forbes Lindsey, Jade supports a huge number of these preprocessed languages. You need to install the individual language compilers for most of the transformers, but they’re usually pretty easy to install since they're almost all contained in npm modules like the Jade compiler that you installed in chapter 1.
+Thanks to a library called "transformers" by Forbes Lindsey, Jade supports a huge number of these preprocessed languages. You need to install the individual language compilers for most of the transformers, but they're usually pretty easy to install since they're almost all contained in npm modules like the Jade compiler that you installed in chapter 1.
 
 ###Template Engines
 It is a little strange to use another template engine inside of Jade code, but it is nevertheless allowed because the underlying transformers library supports it.
@@ -55,10 +55,10 @@ This section includes
  - markdown - You can use marked, supermarked, markdown-js or markdown
  - component-js - npm install component-builder options: {development: false}
  - component-css - npm install component-builder options: {development: false}
- - html2jade - npm install html2jade - Converts HTML back into jade
+ - html2jade - npm install html2jade - Converts HTML back into Jade
 
 ##Examples
-Because of the vast number of languages that can be used in filters, I’m not going to give examples for all of them (that would get really redundant). But here are the most popular ones:
+Because of the vast number of languages that can be used in filters, I'm not going to give examples for all of them (that would get really redundant). But here are the most popular ones:
 
 ###Markdown
 
@@ -134,9 +134,28 @@ Because of the vast number of languages that can be used in filters, I’m not g
 ```
 
 ##Passing Arguments
+Since compilers often take options, Jade has a syntax for passing options to filters. The syntax is the same as specifying attributes for tags, except 
+
+For example, if we pass the `minify` option to the Stylus filter, then the output is minified, rather than pretty-printed as it was in the example above:
+
+```jade
+:stylus(minify=true)
+  p
+    color red
+  b
+    font-weight bold
+    color blue
+```
+
+```html
+<style type="text/css">p{color:#f00}b{font-weight:bold;color:#00f}</style>
+```
+
+
+
 mention this stuff:
 https://github.com/ForbesLindesay/transformers/pull/24#issuecomment-25099595
 
 ##Summary
-In this chapter, we covered our first “feature” of the Jade language: filters, a way to automatically compile other preprocessed languages (like Stylus, Markdown, or CoffeeScript) directly in templates.
+In this chapter, we covered our first "feature" of the Jade language: filters, a way to automatically compile other preprocessed languages (like Stylus, Markdown, or CoffeeScript) directly in templates.
 
