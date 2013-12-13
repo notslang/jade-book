@@ -151,10 +151,7 @@ For example, if we pass the `minify` option to the Stylus filter, then the outpu
 <style type="text/css">p{color:#f00}b{font-weight:bold;color:#00f}</style>
 ```
 
-
-
-mention this stuff:
-https://github.com/ForbesLindesay/transformers/pull/24#issuecomment-25099595
+For a full list of arguements that can be passed, see the [transformers repository](https://github.com/ForbesLindesay/transformers).
 
 ##Summary
 In this chapter, we covered our first "feature" of the Jade language: filters, a way to automatically compile other preprocessed languages (like Stylus, Markdown, or CoffeeScript) directly in templates.
