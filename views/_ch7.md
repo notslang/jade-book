@@ -17,9 +17,7 @@ block scripts
 <script src="jquery.js"></script>
 ```
 
-By default, a block will just output the nested content, but blocks really become useful when you start to extend them.
-
-Blocks can also be nested inside other tags, making them useful as placeholders. For example, in the following file (which we will use for examples throughout the rest of the chapter), we will define 3 blocks; `scripts`, `styles`, and `content`.
+By default, a block will just output the nested content, but blocks really become useful when you start to extend them. Blocks can also be nested inside other tags, making them useful as placeholders. For example, in the following file (which we will use for examples throughout the rest of the chapter), we will define 3 blocks; `scripts`, `styles`, and `content`.
 
 *layout.jade*
 
@@ -54,7 +52,9 @@ By default, the only script that's on the page is jQuery; there are no styles, a
 The extends keyword allows us to specify that a particular template extends another template. This means the template in which the keyword is used gets to modify the blocks of the other template.
 
 The syntax is simple; using `extends layout` means that the template in which it is used gets to extend `layout.jade` (the `.jade` part of the filename is implied). Also, full paths can be used; like if `layout.jade` was 1 directory above the location of the current template, we could use `../layout` to access it.
-Replace
+
+###Replace
+
 To replace the content of a block, we use the same syntax as defining a block, but it must be put in a template that extends the file in which the block was defined. For example, if we have a page in which we need both jQuery and underscore.js, we could redefine the `scripts` block as follows:
 
 *page1.jade (in the same directory as layout.jade)*
@@ -76,13 +76,14 @@ block content
     <script src="jquery.js"></script>
     <script src="underscore.js"></script>
   </head>
-  <body></body>
+  <body>
+  </body>
 </html>
 ```
 
 I also redefined the `content` block to be blank, because you don't necessarily need to pass new content.
 
-##Append
+###Append
 
 In the previous section, we completely redefined the script block, even though we were really just adding to it. We could simplify this example by using the `append` keyword.
 
@@ -112,7 +113,7 @@ block content
 
 Depending on your preference, you could decide to write `append block` rather than just `append`. They mean the same thing, but `append` is shorter, so that will be used in all examples throughout this book.
 
-##Prepend
+###Prepend
 
 The `prepend` keyword does the exact opposite of the append keyword, and also has a longer variant: `prepend block`. Prepend is useful when you want to add something to the beginning of a block. Like if you want underscore.js to load before jQuery, you could do the following:
 
@@ -139,6 +140,18 @@ block content
 ```
 
 And, as you can see, the order is switched.
+
+###Incompatibility
+It is worth noting that blocks are evaluated during compilation, so they will not work with render-time logic like if/else statements. For example, the following will break:
+
+```jade
+if true
+  extends layout1
+else
+  extends layout2
+```
+
+....
 
 ##Includes
 
@@ -199,7 +212,7 @@ In the case of the CSS, it is automatically wrapped in `<style>` tags (just as J
 
 ###Filtered
 
-If you try to include a markdown, stylus, coffeescript, or any of the other types of files mentioned in chapter 3, Jade will automatically compile it for you. For example, if you use `include file.md` then `file.md` will be compiled as Markdown and the resulting HTML will be injected into the template.
+If you try to include a Markdown, Stylus, CoffeeScript, or any of the other types of files mentioned in chapter 3, Jade will automatically compile it for you. For example, if you use `include file.md` then `file.md` will be compiled as Markdown and the resulting HTML will be injected into the template.
 
 For example:
 
@@ -277,7 +290,11 @@ And, as you can see, book.title is available even though it is accessed in code 
 
 ##A Note About Variable Scope
 
-with including jade it just dumps it whereever the include statement was, but with blocks there's incapsulation.... expand this
+As we proved in the last section, when Jade is simply `include`ed all the top-level variables from the file that we inserted are avaliable in the scope that the include statment was placed in. However, blocks do not behave this way - they have incapsulation.
+
+.... expand this
+
+
 
 ##Summary
 
