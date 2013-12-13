@@ -4,9 +4,9 @@ If you're reading this, you've been invited to review *Web Development With Jade
 
 ##The Book
 
-About 4 months ago, I started planning this book to provide a solid source of documentation for people looking to learn how to use Jade. After countless delays, I am happy to say it is nearing compleation.
+About 4 months ago, I started planning this book to provide a solid source of documentation for people looking to learn how to use Jade. After countless delays, I am happy to say it is nearing completion.
 
-The next step is to have members of the communitty read through the book, make sure I've explained everything correctly, and in general: make this book awesome. Rather than using the editing system that [Packt](http://www.packtpub.com/) normally employs (which is a terrible cycle of emailing Word docs between editors), I've written the book in Markdown and switched to using git for revision control.
+The next step is to have members of the community read through the book, make sure I've explained everything correctly, and in general: make this book awesome. Rather than using the editing system that [Packt](http://www.packtpub.com/) normally employs (which is a terrible cycle of emailing Word docs between editors), I've written the book in Markdown and switched to using git for revision control.
 
 So, as a reviewer, I ask you to do the following things:
  - [Read](http://hhsnopek.github.io/jade-book/) through the book
@@ -16,7 +16,7 @@ So, as a reviewer, I ask you to do the following things:
 
 ##The Source
 
-As I mentioned above, the whole book is written in Markdown, and (of course) a little Jade to hold it together. Each chapter has a file in `/views` (`_ch1.md` to `_ch9.md`). You can read these directly on Github at http://hhsnopek.github.io/jade-book/. Or, if you want to modify the book, you can use [roots](http://roots.cx) to compile it:
+As I mentioned above, the whole book is written in Markdown, and (of course) a little Jade to hold it together. Each chapter has a file in `/views` (`_ch1.md` to `_ch9.md`). You can read these directly on GitHub at http://hhsnopek.github.io/jade-book/. Or, if you want to modify the book, you can use [roots](http://roots.cx) to compile it:
 
 ```bash
 npm install roots -g
