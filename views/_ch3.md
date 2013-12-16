@@ -30,7 +30,7 @@ p Jade says #{some_text}!
 <p>Jade says Hello World!</p>
 ```
 
-You just wrap the variable that you want to use in `#{` and `}`, and everything in the curly braces is evaluated as code, rather than text. This can be used pretty much anywhere that text can. But what if we don't just want to insert a variable, but want to do something more?
+You just wrap the variable that you want to use in `#{` and `}`, and everything in the curly braces is evaluated as code, rather than text. This can be used pretty much anywhere that text can. But what if we don't just want to insert a variable, but want to do something more?
 
 ```jade
 p 2 times 3 is #{2 * 3}
