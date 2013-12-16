@@ -66,4 +66,12 @@ html
                 else
                     last_element = e
             )
+            
+            # fix the width of the doctype examples
+            element = $("#doctypes").next()[0] # skip first p tag
+            while (element = $(element).next()[0]).tagName is 'PRE'
+                $(element).addClass('doctype-jade')
+                element = $(element).next()[0] # next is html output
+                $(element).addClass('doctype-html')
+
             hljs.initHighlightingOnLoad()
