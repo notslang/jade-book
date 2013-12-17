@@ -197,14 +197,14 @@ The easiest way to send data to the Jade compiler is by just providing it in a J
     jade file.jade --obj '{"my_content":"this text is coming through the terminal"}'
     ```
 
-3. Now, check `file.html`:
+3. And we can see the result in `file.html`:
 
     ```html
     <p>this text is coming through the terminal</p>
     ```
 
 ###Programmatically
-Sending variables to Jade programmatically is a bit harder, but offers more flexibility, such as being able to perform rendering within the browser. So, using the same initial file, 
+Sending variables to Jade programmatically is a bit harder, but offers more flexibility, such as being able to perform rendering within the browser. So, using the same initial file (`file.jade`):
 
 
 1. Run the following command in the terminal:
@@ -213,7 +213,7 @@ Sending variables to Jade programmatically is a bit harder, but offers more flex
     jade file.jade --no-debug --client
     ```
 
-2. In file.js, enter the following:
+2. And we can see the result in `file.js`:
 
     ```js
     function anonymous(locals) {
@@ -228,7 +228,7 @@ Sending variables to Jade programmatically is a bit harder, but offers more flex
     }
     ```
 
-So to render this function, we need to include a set of client-side Jade utilities that are used for escaping and other basic function calls:
+To render this function into HTML, we need to include a set of client-side Jade utilities that are used for escaping and other basic function calls, as well as the code that was outputted into `file.js`. The client-side utilities are avaliable in [runtime.js](https://github.com/visionmedia/jade/raw/master/runtime.js) from the main Jade repo. After all of this is included, you can call the function we created (named `anonymous`) like this:
 
 ```js
 anonymous(
@@ -236,7 +236,7 @@ anonymous(
 )
 ```
 
-The preceding code renders:
+The preceding code returns the following string of HTML:
 
 ```html
 <p>this text is coming through a function call</p>

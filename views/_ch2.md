@@ -431,7 +431,7 @@ You can also write your own doctype as follows:
 <!DOCTYPE html public "-//w3c//dtd xhtml basic 1.1//en">
 ```
 
-And if you don't think that `!!!` is quite clear enough, you can use `doctype` instead:
+And if you don't think that `!!!` is quite clear enough, you can use `doctype` in all the above examples, instead:
 
 ```jade
 doctype 5
