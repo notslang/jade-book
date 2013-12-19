@@ -1,11 +1,9 @@
 #Template Inheritance
 
 ##What It's Used For
-
 Sites generally have a basic layout which is the same across all pages, and then small "blocks" of HTML that make each page unique. To prevent you from needing to repeat this base layout in every single file, Jade uses a block system that lets you insert interchangeable blocks into templates.
 
 ##Blocks
-
 Blocks function like small containers for Jade. Their content can be appended to, prepended to, or replaced entirely. To define a block, simply use the `block` keyword, and then the name of the block:
 
 ```jade
@@ -47,14 +45,30 @@ html
 
 By default, the only script that's on the page is jQuery; there are no styles, and in the body there is a short message explaining that there's no content on the page. That's pretty boring, so next we're going to learn how to extend this page to make it better.
 
-##Extends
+###Blocks Don't Provide Encapsulation
+Variables defined in blocks can be accessed outside of blocks. For example:
 
+```jade
+block example
+  variable_from_a_block = 'I was defined inside a block'
+
+p=variable_from_a_block
+```
+
+```html
+<p>I was defined inside a block</p>
+```
+
+I would not recommend accessing variables defined in blocks outside of blocks, since replacing the content of the block defining that variable would remove the variable and break whatever it was used in. Also, it makes more sense logically to group the variables with the place they are used, when possible.
+
+But even if you follow this recommendation, it is still important to note that they are in the same name-space, so reusing a variable name redefines it.
+
+##Extends
 The extends keyword allows us to specify that a particular template extends another template. This means the template in which the keyword is used gets to modify the blocks of the other template.
 
 The syntax is simple; using `extends layout` means that the template in which it is used gets to extend `layout.jade` (the `.jade` part of the filename is implied). Also, full paths can be used; like if `layout.jade` was 1 directory above the location of the current template, we could use `../layout` to access it.
 
 ###Replace
-
 To replace the content of a block, we use the same syntax as defining a block, but it must be put in a template that extends the file in which the block was defined. For example, if we have a page in which we need both jQuery and underscore.js, we could redefine the `scripts` block as follows:
 
 *page1.jade (in the same directory as layout.jade)*
@@ -151,16 +165,37 @@ else
   extends layout2
 ```
 
-....
+This is a rather "edge" case because there is usually no reason to structure your templates in such a way that render-time logic influances compile-time statements. Thus, this incompatibility will probably not be fixed.
+
+###Extra Things in Extenders
+If you have things, other than blocks, in a template which extends another template, they will be ignored. For example:
+
+*minimal_layout.jade*
+
+```jade
+p=a_variable
+```
+
+*ignored_things.jade (in the same directory as minimal_layout.jade)*
+
+```jade
+extends minimal_layout
+a_variable = 'I won\'t show up'
+p I won't show up either
+```
+
+```html
+<p></p>
+```
+
+As you can see, `a_variable` cannot be accessed in `minimal_layout.jade` because it was defined in a template extending it. Similarly, the `p` tag from `ignored_things.jade` doesn't show up because markup is ignored in extending templates.
 
 ##Includes
-
 The last way to insert content from another file is with an `include` statement. This is the simplest way, but also the least dynamic because you cannot change/generate the name of the file you want to include. This is because includes are one of the first things that are evaluated when compiling a template; before any loops, logical operations, or variables.
 
 Still, they are quite useful for moving pieces of templates that are reused many times into their own files, or for including static assets like HTML, CSS, or JS directly in templates.
 
 ###Static
-
 If you just want to include a static asset, the operation is very basic.
 
 *style.css*
@@ -292,9 +327,9 @@ And, as you can see, book.title is available even though it is accessed in code 
 
 As we proved in the last section, when Jade is simply `include`ed all the top-level variables from the file that we inserted are avaliable in the scope that the include statment was placed in. However, blocks do not behave this way - they have incapsulation.
 
-.... expand this
+For example:
 
-
+....
 
 ##Summary
 
