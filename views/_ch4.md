@@ -44,7 +44,7 @@ Switches don't work. Use the `case` statement that is explained in the next sect
 Loops can be used to iterate over lists, or repeat elements a certain number of times.
 
 ```jade
-list = ["one","two", 'three'];
+list = ['one', 'two', 'three'];
 
 ul
   - for (var i = 0; i < list.length; i++){
