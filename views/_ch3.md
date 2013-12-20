@@ -57,14 +57,13 @@ It works in text blocks:
 
 ```jade
 i = ['proident', 'dreamcatcher', 'ennui', 'Tonx']
-```
 
-```html
 pre
   | #{i[0]} #{i[1]}
   | #{i[2]} #{i[3]}
+```
 
-
+```html
 <pre>proident dreamcatcher
 ennui Tonx</pre>
 ```

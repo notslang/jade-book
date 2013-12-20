@@ -34,7 +34,7 @@ html
     p Jade FTW!
 ```
 
-Both of the preceding code examples mean the exact same thing, except one is much shorter. This is Jade, a powerful, terse templating language that is compiled into HTML. In addition to the syntactical improvements, Jade lets you simplify redundant markup with programmed logic. Also, it allows you create templates which can take in, and display data.
+Both of the preceding code examples mean the exact same thing, except one is much shorter. This is Jade, a powerful, terse templating language that is compiled into HTML. In addition to the syntactical improvements, Jade lets you simplify redundant markup with programmed logic. Also, it allows you create templates which can take in and display data.
 
 ##Why Should I Preprocess?
 Jade really is just one option in a whole class of preprocessors; to have a complete understanding of Jade, we should understand why this class of languages was created.
