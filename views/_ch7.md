@@ -323,14 +323,6 @@ for book in books
 
 And, as you can see, book.title is available even though it is accessed in code that was written in `book-format.jade`.
 
-##A Note About Variable Scope
-
-As we proved in the last section, when Jade is simply `include`ed all the top-level variables from the file that we inserted are available in the scope that the include statement was placed in. However, blocks do not behave this way - they have encapsulation.
-
-For example:
-
-....
-
 ##Summary
 
 In this chapter we learned about the last part major of the language: template inheritance, which is done through a block system. In addition, we learned about `include`, a related keyword that lets us include non-Jade files, like scripts and styles.
