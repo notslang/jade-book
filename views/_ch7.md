@@ -165,7 +165,7 @@ else
   extends layout2
 ```
 
-This is a rather "edge" case because there is usually no reason to structure your templates in such a way that render-time logic influances compile-time statements. Thus, this incompatibility will probably not be fixed.
+This is a rather "edge" case because there is usually no reason to structure your templates in such a way that render-time logic influences compile-time statements. Thus, this incompatibility will probably not be fixed.
 
 ###Extra Things in Extenders
 If you have things, other than blocks, in a template which extends another template, they will be ignored. For example:
@@ -325,7 +325,7 @@ And, as you can see, book.title is available even though it is accessed in code 
 
 ##A Note About Variable Scope
 
-As we proved in the last section, when Jade is simply `include`ed all the top-level variables from the file that we inserted are avaliable in the scope that the include statment was placed in. However, blocks do not behave this way - they have incapsulation.
+As we proved in the last section, when Jade is simply `include`ed all the top-level variables from the file that we inserted are available in the scope that the include statement was placed in. However, blocks do not behave this way - they have encapsulation.
 
 For example:
 

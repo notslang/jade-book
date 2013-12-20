@@ -26,7 +26,7 @@ Each level of indentation (the rectangles outlined with dashed lines) creates a 
 
 ------------------------
 **ProTip**
-Most editors let you manipulate entire blocks of code by selecting several lines and then pressing Tab to indent the block or Shift + Tab to "de-dent" it.
+Most editors let you manipulate entire blocks of code by selecting several lines and then pressing Tab to indent the block or Shift + Tab to "de-dent" it. This is very useful when working in a whitespace-significant language like Jade.
 
 ------------------------
 
@@ -174,9 +174,42 @@ p(id="hello", class="world")
 
 ------------------------
 **ProTip**
-Jade `0.35.0` (released 2013-08-21) added support for space-seperated attributes. Soon, this will be supported by syntax hilighters, syntax checkers, and related tools like html2jade - but until then you may wish to stick with the comment-delimited syntax. For this reason, the rest of this book will use comment-delimited attributes.
+Jade `0.35.0` (released 2013-08-21) added support for space-separated attributes. Soon, this will be supported by syntax highlighters, syntax checkers, and related tools like `html2jade` - but until then you may wish to stick with the comment-delimited syntax. For this reason, the rest of this book will use comment-delimited attributes.
 
 ------------------------
+
+###Passing Objects as Attributes
+Not only can you pass strings as attributes, but if you pass objects they will be turned into the most useful representation for that particular attribute. For example, passing an array to the `class` attribute will be interpreted as a list of classes:
+
+```jade
+p(class=['first-class', 'another-class', 'last-class'])
+```
+
+```html
+<p class="first-class another-class last-class"></p>
+```
+
+As you can see, it results in a valid, space-delimited list of classes. Another example is when you pass any type of object to a `data-*` attribute, it will be encoded as JSON:
+
+```jade
+p(data-myattr={numbers: [2, 4, 8], string: 'this is a string'})
+```
+
+```html
+<p data-myattr='{"numbers":[2,4,8],"string":"this is a string"}'></p>
+```
+
+However, for most attributes it just outputs the standard string representation of the object:
+
+```jade
+p(value=['one', 'two', 'three'])
+```
+
+```html
+<p value="one,two,three"></p>
+```
+
+This isn't incredibly useful unless the object that you're passing has a custom `.toString()`.
 
 ##Shorthands
 
