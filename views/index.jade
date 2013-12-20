@@ -75,3 +75,12 @@ html
                 $(element).addClass('doctype-html')
 
             hljs.initHighlightingOnLoad()
+
+            $('pre code').each( ->
+                lines = $(@).html().split('\n').length
+                numbering = $('<ul/>').addClass('pre-numbering')
+                $(@).addClass('has-numbering').parent().append(numbering)
+                if lines isnt 1
+                    for i in [1..lines]
+                        numbering.append $('<li/>').text(i)
+            )

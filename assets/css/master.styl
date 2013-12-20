@@ -5,25 +5,27 @@ base()
 
 body
 	padding: 50px
-	max-width 800px
+	max-width 900px
 	margin auto
 	font-size 16px
 
 pre
 	font-size 14px
 
+pre code
+	padding 5px
+
 .side-by-side
 	width 50%
 	display inline-block
 	vertical-align top
-	padding 5px
 	box-sizing border-box
 
 .doctype-jade
-	width 33%
+	width 30%
 
 .doctype-html
-	width 66%
+	width 70%
 
 .joined
 	margin-bottom 0
@@ -40,3 +42,33 @@ chapter
 
 h1 
 	text-align right
+
+//numbering
+pre
+	position: relative
+	overflow: hidden
+
+	ul
+		margin 5px 0
+
+	code
+		display: block
+		overflow-y: auto
+		white-space pre
+
+.has-numbering
+	margin-left: 23px
+
+.pre-numbering
+	position: absolute
+	top: 0
+	left: 0
+	width: 20px
+	padding: 0
+	list-style-type: none
+	text-align: right
+	color: #AAA
+
+// don't show line numbers for bash... kinda useless
+pre code.bash ul
+	color white
