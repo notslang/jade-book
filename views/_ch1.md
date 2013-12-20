@@ -34,16 +34,16 @@ html
     p Jade FTW!
 ```
 
-Both of the preceding code examples mean the exact same thing, except one is much shorter. This is Jade, a powerful, terse templating language that is compiled into HTML. In addition to the syntactical improvements, Jade lets you simplify markup, which is redundant, with a programmed logic. Also, it allows you to feed data into compiled templates.
+Both of the preceding code examples mean the exact same thing, except one is much shorter. This is Jade, a powerful, terse templating language that is compiled into HTML. In addition to the syntactical improvements, Jade lets you simplify redundant markup with programmed logic. Also, it allows you create templates which can take in, and display data.
 
 ##Why Should I Preprocess?
 Jade really is just one option in a whole class of preprocessors; to have a complete understanding of Jade, we should understand why this class of languages was created.
 
 Preprocessors are high-level languages that offer syntactical and functional improvements over their "vanilla" (non-preprocessed) counterparts. These high-level languages allow you to write the markup in a better language that is compiled down to normal (vanilla) HTML. Thus, they are there purely to improve your productivity, without affecting their compatibility with existing technologies.
 
-Preprocessing, in general, offers many benefits over writing vanilla HTML. **Standard Generalized Markup Language (SGML)**, the predecessor of HTML, was created to be robust and easy to parse at the expense of being clean and easy to write.Because of this, a variety of preprocessors have emerged that offer a more terse syntax.
+Preprocessing, in general, offers many benefits over writing vanilla HTML. SGML (Standard Generalized Markup Language), the predecessor of HTML, was created to be robust and easy to parse at the expense of being clean and easy to write. Because of this, a variety of preprocessors have emerged that offer a more terse syntax.
 
-Occasionally, people will avoid preprocessing because it *adds another step*, another layer of abstraction to the end result. However, improvements in code readability and ease of writing far outweigh the inconvenience of this additional step. And furthermore, anything more complex than a static site will require a step to inject whatever dynamic content the site has.
+Occasionally, people will avoid preprocessing because it *adds another step*, another layer of abstraction to the end result. However, improvements in code readability and ease of writing far outweigh the inconvenience of this additional step. Furthermore, anything more complex than a static site will require a "build" step anyway, to inject whatever dynamic content the site has.
 
 ##How Jade Preprocesses
 In the case of Jade, this preprocessing is done by compiling templates into JS and then rendering them to HTML:
@@ -76,7 +76,7 @@ Mustache is another JS-based templating language, and like Jade it compiles into
 There are many other templating languages, but they all suffer from pretty much the same issues, or they just haven't gained a large enough supporting community to be recognized as a major language yet.
 
 ##Installation Instructions
-To install the Jade compiler, you first need to have Node.js installed. This is a JavaScript interpreter based on V8, that lets you run JS outside of the browser. The installation instructions are available at http://nodejs.org/. Once you have Node.js installed, you can use npm (the Node.js Package Manager) to install Jade from the terminal:
+To install the Jade compiler, you first need to have Node.js installed. This is a JavaScript interpreter based on V8, that lets you run JS outside of the browser. The installation instructions are available at http://nodejs.org/. Once you have Node.js installed, you can use npm (Node.js Package Manager) to install Jade from the terminal:
 
 ```bash
 $ npm install jade -g
