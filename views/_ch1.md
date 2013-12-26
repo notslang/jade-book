@@ -22,7 +22,7 @@ Let's start with a simple example. First we have HTML, and then the same thing r
 ```
 
 ```jade
-!!!5
+doctype html
 html
   head
   body

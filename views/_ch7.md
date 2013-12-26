@@ -20,7 +20,7 @@ By default, a block will just output the nested content, but blocks really becom
 *layout.jade*
 
 ```jade
-!!!
+doctype
 html
   head
     block scripts
@@ -217,7 +217,7 @@ p {
 *example.jade (in the same directory as style.css)*
 
 ```jade
-!!!
+doctype
 html
   head
     include style.css
@@ -269,7 +269,7 @@ this is a file for demonstrating the use of includes in Jade
 *filters.jade (in the same directory as style.styl)*
 
 ```jade
-!!!
+doctype
 html
   head
     include style.styl

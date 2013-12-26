@@ -375,7 +375,7 @@ But that is really hard to read, so please, *never* do that unless you have a ve
 Doctypes can be really long, so naturally Jade gives us a much shorter way to write them.
 
 ```jade
-!!!
+doctype
 ```
 
 ```html
@@ -383,7 +383,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! default
+doctype default
 ```
 
 ```html
@@ -391,7 +391,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! 5
+doctype html
 ```
 
 ```html
@@ -399,7 +399,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! xml
+doctype xml
 ```
 
 ```html
@@ -407,7 +407,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! transitional
+doctype transitional
 ```
 
 ```html
@@ -415,7 +415,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! strict
+doctype strict
 ```
 
 ```html
@@ -423,7 +423,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! frameset
+doctype frameset
 ```
 
 ```html
@@ -431,7 +431,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! 1.1
+doctype 1.1
 ```
 
 ```html
@@ -439,7 +439,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! basic
+doctype basic
 ```
 
 ```html
@@ -447,7 +447,7 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 ```
 
 ```jade
-!!! mobile
+doctype mobile
 ```
 
 ```html
@@ -457,22 +457,18 @@ Doctypes can be really long, so naturally Jade gives us a much shorter way to wr
 You can also write your own doctype as follows:
 
 ```jade
-!!! html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+doctype html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
 ```
 
 ```html
 <!DOCTYPE html public "-//w3c//dtd xhtml basic 1.1//en">
 ```
 
-And if you don't think that `!!!` is quite clear enough, you can use `doctype` in all the above examples, instead:
+------------------------
+**ProTip**
+You may notice `!!!` used instead of `doctype` in old Jade code. This used to be a standard shorthand for doctypes, but `!!!` is now deprecated because it isn't expressive enough.
 
-```jade
-doctype 5
-```
-
-```html
-<!DOCTYPE html>
-```
+------------------------
 
 ##Summary
 In this chapter, we dived into the language itself, covering the very basics of the syntax. This included how indentation-based syntaxes work and how to write tags, text, attributes, comments, and some nifty shorthands for classes, IDs, and doctypes.
