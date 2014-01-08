@@ -174,7 +174,7 @@ p(id="hello", class="world")
 
 ------------------------
 **ProTip**
-Jade `0.35.0` (released 2013-08-21) added support for space-separated attributes. Soon, this will be supported by syntax highlighters, syntax checkers, and related tools like `html2jade` - but until then you may wish to stick with the comment-delimited syntax. For this reason, the rest of this book will use comment-delimited attributes.
+Jade `0.35.0` (released 2013-08-21) added support for space-separated attributes. Soon, this will be supported by syntax highlighters, syntax checkers, and related tools like `html2jade` - but until then you may wish to stick with the comma-delimited syntax. For this reason, the rest of this book will use comma-delimited attributes.
 
 ------------------------
 
