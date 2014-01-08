@@ -1,5 +1,5 @@
 #Logic in Templates
-Ok, now that we know how to send data to templates and display them in the resulting HTML, we can actually make useful templates. However, sometimes we need a little a little more power. For that, we turn to logical operations.
+Ok, now that we know how to send data to templates and display them in the resulting HTML, we can actually make useful templates. However, sometimes we need a little more power. For that, we turn to logical operations.
 
 ##Adding Logic with JavaScript
 As I've already mentioned, Jade compiles into JS and allows you to use JS directly in your template. So, we can use any of the logical operators that JS provides to build our markup.
@@ -8,9 +8,9 @@ As I've already mentioned, Jade compiles into JS and allows you to use JS direct
 The most basic logical operator is the if statement:
 
 ```jade
-name = "Bob"
+- name = "Bob"
 
-- if(name == "Bob") {
+- if (name == "Bob") {
   h1 Hello Bob
 - } else {
   h1 My name is #{name}
@@ -24,8 +24,8 @@ name = "Bob"
 And the shorthand form (the ternary operator) works too:
 
 ```jade
-name = 'Bob'
-greeting = (name == 'Bob' ? 'Hello' : 'My name is')
+- name = 'Bob'
+- greeting = (name == 'Bob' ? 'Hello' : 'My name is')
 h1 #{greeting} #{name}
 ```
 
@@ -44,7 +44,7 @@ Switches don't work. Use the `case` statement that is explained in the next sect
 Loops can be used to iterate over lists, or repeat elements a certain number of times.
 
 ```jade
-list = ['one', 'two', 'three'];
+- list = ['one', 'two', 'three'];
 
 ul
   - for (var i = 0; i < list.length; i++){
@@ -86,7 +86,7 @@ Here are a few examples:
 ###If / Else / Else If
 
 ```jade
-name = "Bob"
+- name = "Bob"
 if name == "Bob"
   h1 Hello Bob
 else if name == "Joe"
@@ -103,7 +103,7 @@ else
 Jade also provides `unless` which is equivalent to `if (!(expr))`
 
 ```jade
-name = "Bob"
+- name = "Bob"
 unless name == "Bob"
   h1 My name is #{name}
 else
@@ -117,7 +117,7 @@ else
 ###Cases
 
 ```jade
-name = "Bob"
+- name = "Bob"
 case name
   when "Bob"
     p Hi Bob!
@@ -135,7 +135,7 @@ case name
 Each is used for iterating over arrays and objects, and is written in the form: `each VAL[, KEY] in OBJ`
 
 ```jade
-list = ["one","two", 'three']
+- list = ["one","two", 'three']
 
 ul
   each item in list
@@ -151,7 +151,7 @@ ul
 ```
 
 ```jade
-books = ["A", "B", "C"]
+- books = ["A", "B", "C"]
 
 select
   each book, i in books
@@ -167,7 +167,7 @@ select
 ```
 
 ```jade
-books = {"000":"A", "001":"B", "010":"C"}
+- books = {"000":"A", "001":"B", "010":"C"}
 
 select
   each book, i in books
@@ -190,8 +190,8 @@ You can also use `for` in place of `each` - they mean the same thing
 
 ###While Loops
 ```jade
-list = ["one","two", 'three']
-i = 0
+- list = ["one","two", 'three']
+- i = 0
 
 ul
   while i < list.length
@@ -212,7 +212,7 @@ Interpolation cannot be used in code blocks, including vanilla JS and the builti
 
 ```jade
 - var there = "foo"
-title = "Hello #{there}"
+- title = "Hello #{there}"
 p #{title}
 ```
 
