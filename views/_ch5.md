@@ -19,7 +19,7 @@ It is a little strange to use another template engine inside of Jade code, but i
  - handlebars - extension of mustache templates
  - hogan - Mustache templates
  - jade - robust, elegant, feature rich template engine
-jazz
+ - jazz
  - jqtpl - extensible logic-less templates
  - JUST - EJS style template with some special syntax for layouts/partials etc.
  - liquor - extended EJS with significant white space
@@ -28,11 +28,13 @@ jazz
  - swig - Django-like templating engine
  - templayed - Mustache focused on performance
  - toffee - templating language based on coffeescript
-underscore
+ - underscore
  - walrus - A bolder kind of mustache
  - whiskers - logic-less focused on readability
-Stylesheet Languages
+
+###Stylesheet Languages
 These languages can be extremely useful for writing and generating CSS, but normally are difficult to compile when they are inside of other files. Jade solves this problem by allowing you to use them through filters.
+
  - less - LESS extends CSS with dynamic behavior such as variables, mixins, operations and functions.
  - stylus - revolutionary CSS generator making braces optional
  - sass - Sassy CSS
