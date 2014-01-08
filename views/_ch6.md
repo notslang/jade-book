@@ -95,13 +95,13 @@ Back in chapter 3 I mentioned that interpolation doesn't work in the arguments u
 mixin hello(p)
   | #{p}
 
-title = "This is my Title"
+- title = "This is my Title"
 p
   mixin hello('#{title}')
 ```
 
 ```html
-p  #{title}
+<p>#{title}</p>
 ```
 
 If interpolation did work in mixin arguments then this would output `This is my Title` rather than `#{title}`.
