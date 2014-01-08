@@ -292,11 +292,11 @@ But of course, we need to be able to comment out multiple lines too; for that, w
 
 ```html
 <!-- a block comment
-<h1>Now I'm Commented Out.</h1>
-<p>And me too.</p>-->
+h1 Now I'm Commented Out.
+p And me too.-->
 ```
 
-As you can see, the first line of the comment becomes a text block, and the indented block is parsed normally. However, the first line is entirely optional and is generally just used to note what was commented out. We can omit it if we want to:
+As you can see, the first line of the comment becomes a text block, and the indented block is not parsed. However, the first line is entirely optional and is generally just used to note what was commented out. We can omit it if we want to:
 
 ```jade
 //
@@ -306,8 +306,8 @@ As you can see, the first line of the comment becomes a text block, and the inde
 
 ```html
 <!--
-<h1>Now I'm Commented Out.</h1>
-<p>And me too.</p>-->
+h1 Now I'm Commented Out.
+p And me too.-->
 ```
 
 And of course, silent comments work here too:
@@ -316,19 +316,6 @@ And of course, silent comments work here too:
 //-
   h1 Now I'm Commented Out.
   p And me too.
-```
-
-But what's really cool about block comments is that they automatically detect when you're trying to make a conditional comment for IE.
-
-```jade
-// if lt IE 9
-  script(src='/ie.js')
-```
-
-```html
-<!--[if lt IE 9]>
-<script src="/ie.js"></script>
-<![endif]-->
 ```
 
 ##Block expansion
