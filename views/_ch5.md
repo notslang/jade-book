@@ -2,7 +2,7 @@
 Much like how Jade is better than writing HTML, there are preprocessed languages for writing other languages. These include languages that compile into CSS, JS, and even specialized subsets of HTML for basic formatting. This book will not attempt to teach any of these to you because, honestly there are already great resources out there for learning all of them. However, it is worth mentioning these languages because Jade has a feature called "filters" that allows you to use several of them right inside your templates.
 
 ##The Full List
-Thanks to a library called "transformers" by Forbes Lindsey, Jade supports a huge number of these preprocessed languages. You need to install the individual language compilers for most of the transformers, but they're usually pretty easy to install since they're almost all contained in npm modules like the Jade compiler that you installed in chapter 1.
+Thanks to a library called "transformers" by Forbes Lindesay, Jade supports a huge number of these preprocessed languages. You need to install the individual language compilers for most of the transformers, but they're usually pretty easy to install since they're almost all contained in npm modules like the Jade compiler that you installed in chapter 1.
 
 ###Template Engines
 It is a little strange to use another template engine inside of Jade code, but it is nevertheless allowed because the underlying transformers library supports it.
