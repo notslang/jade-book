@@ -137,6 +137,7 @@ jade.debug.shift();;return buf.join("");
 } catch (err) {
   jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno,"h1 Some Jade\n");
 }
+}
 ```
 
 which results in some very ugly JS, mostly due to the debugging information. We can remove that debugging information with the `--no-debug` argument.

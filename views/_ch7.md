@@ -50,7 +50,7 @@ Variables defined in blocks can be accessed outside of blocks. For example:
 
 ```jade
 block example
-  variable_from_a_block = 'I was defined inside a block'
+  - variable_from_a_block = 'I was defined inside a block'
 
 p=variable_from_a_block
 ```
@@ -123,15 +123,13 @@ block content
 </html>
 ```
 
-`page2.jade` results in the same HTML as `page1.jade`, But 
-
-Depending on your preference, you could decide to write `append block` rather than just `append`. They mean the same thing, but `append` is shorter, so that will be used in all examples throughout this book.
+`page2.jade` results in the same HTML as `page1.jade`. But depending on your preference, you could decide to write `block append` rather than just `append`. They mean the same thing, but `append` is shorter, so that will be used in all examples throughout this book.
 
 ###Prepend
 
-The `prepend` keyword does the exact opposite of the append keyword, and also has a longer variant: `prepend block`. Prepend is useful when you want to add something to the beginning of a block. Like if you want underscore.js to load before jQuery, you could do the following:
+The `prepend` keyword does the exact opposite of the append keyword, and also has a longer variant: `block prepend`. Prepend is useful when you want to add something to the beginning of a block. Like if you want underscore.js to load before jQuery, you could do the following:
 
-*page2.jade (in the same directory as layout.jade)*
+*page3.jade (in the same directory as layout.jade)*
 
 ```jade
 extends layout
@@ -180,7 +178,7 @@ p=a_variable
 
 ```jade
 extends minimal_layout
-a_variable = 'I won\'t show up'
+- a_variable = 'I won\'t show up'
 p I won't show up either
 ```
 
@@ -220,7 +218,8 @@ p {
 doctype
 html
   head
-    include style.css
+    style(type="text/css")
+      include style.css
   body
     include content.html
 ```
@@ -243,11 +242,9 @@ p {
 </html>
 ```
 
-In the case of the CSS, it is automatically wrapped in `<style>` tags (just as JS is wrapped with `<script>` tags), but the contents of the HTML file are passed through in verbatim.
-
 ###Filtered
 
-If you try to include a Markdown, Stylus, CoffeeScript, or any of the other types of files mentioned in chapter 3, Jade will automatically compile it for you. For example, if you use `include file.md` then `file.md` will be compiled as Markdown and the resulting HTML will be injected into the template.
+If you try to include a Markdown, Stylus, CoffeeScript, or any of the other types of files mentioned in chapter 3, you have to use filters. For example, if you use `include:md file.md` then `file.md` will be compiled as Markdown and the resulting HTML will be injected into the template.
 
 For example:
 
@@ -272,9 +269,10 @@ this is a file for demonstrating the use of includes in Jade
 doctype
 html
   head
-    include style.styl
+    style(type="text/css")
+      include:styl style.styl
   body
-    include content.markdown
+    include:md content.md
 ```
 
 ```html
@@ -310,7 +308,7 @@ p #{book.title} by #{book.author}
 *example2.jade (in the same directory as book-format.jade)*
 
 ```jade
-books = [{title: "Godel Escher Bach: An Eternal Golden Braid", author: "Douglas Hofstadter"}, {title: "Slaughter-House Five", author: "Kurt Vonnegut"}];
+- books = [{title: "Godel Escher Bach: An Eternal Golden Braid", author: "Douglas Hofstadter"}, {title: "Slaughter-House Five", author: "Kurt Vonnegut"}];
 
 for book in books
   include book-format
@@ -321,7 +319,7 @@ for book in books
 <p>Slaughter-House Five by Kurt Vonnegut</p>
 ```
 
-And, as you can see, book.title is available even though it is accessed in code that was written in `book-format.jade`.
+And, as you can see, `book.title` is available even though it is accessed in code that was written in `book-format.jade`.
 
 ##Summary
 

@@ -11,13 +11,7 @@ First, we're going to start with learning how to define variables inside a templ
 - var some_text = "Hello World";
 ```
 
-If you've worked with JavaScript, this should look very familiar because it is JS. In fact, any JS can be executed in a template, it just needs a dash and a space in front of it. Specifically, for defining variables, Jade also gives us a nice shorthand way that compiles into the same thing:
-
-```jade
-some_text = "Hello World"
-```
-
-Since the shorthand one isn't JS, we don't need the dash before it, making it a bit cleaner.
+If you've worked with JavaScript, this should look very familiar because it is JS. In fact, any JS can be executed in a template, it just needs a dash and a space in front of it.
 
 ##Interpolation everywhere!
 Now how about actually putting the data into something? For this, we can use interpolation:
@@ -45,7 +39,7 @@ Yep, interpolation can contain full expressions too - pretty much any code you w
 It works in attributes:
 
 ```jade
-base_url = "http://slang.cx"
+- base_url = "http://slang.cx"
 a(href="#{base_url}/about")
 ```
 
@@ -56,7 +50,7 @@ a(href="#{base_url}/about")
 It works in text blocks:
 
 ```jade
-i = ['proident', 'dreamcatcher', 'ennui', 'Tonx']
+- i = ['proident', 'dreamcatcher', 'ennui', 'Tonx']
 
 pre
   | #{i[0]} #{i[1]}
@@ -71,7 +65,7 @@ ennui Tonx</pre>
 It even works in tag names:
 
 ```jade
-mytag = "section"
+- mytag = "section"
 #{mytag} Got some content in here
 ```
 
@@ -89,7 +83,7 @@ Storing your tag names in variables is usually a bad idea because it isn't very 
 Writing out the full interpolation syntax when you don't need to actually put a variable inside of a body of text (and have all the text for that attribute or tag directly in the variable) can be a bit annoying. So naturally, Jade gives us a shorter way. Take the following code, for example:
 
 ```jade
-i = {"type": "text", "name": "Bob"}
+- i = {"type": "text", "name": "Bob"}
 input(type="#{i.type}", value="#{i.name}")
 ```
 
@@ -100,7 +94,7 @@ input(type="#{i.type}", value="#{i.name}")
 This can be rewritten as:
 
 ```jade
-i = {"type": "text", "name": "Bob"}
+- i = {"type": "text", "name": "Bob"}
 input(type=i.type, value=i.name)
 ```
 
@@ -111,7 +105,7 @@ input(type=i.type, value=i.name)
 Or, consider this example:
 
 ```jade
-content = "Richardson leggings Cosby sweater, pariatur locavore Pinterest Schlitz"
+- content = "Richardson leggings Cosby sweater, pariatur locavore Pinterest Schlitz"
 p #{content}
 ```
 
@@ -122,7 +116,7 @@ p #{content}
 This can be rewritten as this:
 
 ```jade
-content = "Richardson leggings Cosby sweater, pariatur locavore Pinterest Schlitz"
+- content = "Richardson leggings Cosby sweater, pariatur locavore Pinterest Schlitz"
 p= content
 ```
 
@@ -136,8 +130,8 @@ In each of these instances, we just use an `=` (equal to sign) to indicate that 
 By default, Jade encodes HTML characters for security, so:
 
 ```jade
-html_content = "Hello <em>World</em>"
-p = html_content
+- html_content = "Hello <em>World</em>"
+p= html_content
 ```
 
 ```html
@@ -147,7 +141,7 @@ p = html_content
 And, of course:
 
 ```jade
-html_content = "Hello <em>World</em>"
+- html_content = "Hello <em>World</em>"
 p #{html_content}
 ```
 
@@ -158,7 +152,7 @@ p #{html_content}
 This is great for preventing XSS (cross-site scripting) attacks, and even just displaying innocent code examples without needing to encode them yourself. However, it will mess up content that is supposed to be HTML, like the text provided by most content management systems. So, we need a way of telling Jade when it shouldn't escape our text.
 
 ```jade
-html_content = "Hello <em>World</em>"
+- html_content = "Hello <em>World</em>"
 p!= html_content
 ```
 
@@ -169,7 +163,7 @@ p!= html_content
 And:
 
 ```jade
-html_content = "Hello <em>World</em>"
+- html_content = "Hello <em>World</em>"
 p !{html_content}
 ```
 
