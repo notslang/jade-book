@@ -69,7 +69,7 @@ It can be refactored into a reusable mixin:
 
 ```jade
 mixin navbar(pages)
-  checked = true
+  - checked = true
   for page in pages
     input(
       type='radio', name='nav', value=page, id="#{page}_nav", checked=checked)
