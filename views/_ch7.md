@@ -1,5 +1,4 @@
 #Template Inheritance
-
 ##What It's Used For
 Sites generally have a basic layout which is the same across all pages, and then small "blocks" of HTML that make each page unique. To prevent you from needing to repeat this base layout in every single file, Jade uses a block system that lets you insert interchangeable blocks into templates.
 
@@ -98,7 +97,6 @@ block content
 I also redefined the `content` block to be blank, because you don't necessarily need to pass new content.
 
 ###Append
-
 In the previous section, we completely redefined the script block, even though we were really just adding to it. We could simplify this example by using the `append` keyword.
 
 *page2.jade (in the same directory as layout.jade)*
@@ -126,7 +124,6 @@ block content
 `page2.jade` results in the same HTML as `page1.jade`. But depending on your preference, you could decide to write `block append` rather than just `append`. They mean the same thing, but `append` is shorter, so that will be used in all examples throughout this book.
 
 ###Prepend
-
 The `prepend` keyword does the exact opposite of the append keyword, and also has a longer variant: `block prepend`. Prepend is useful when you want to add something to the beginning of a block. Like if you want underscore.js to load before jQuery, you could do the following:
 
 *page3.jade (in the same directory as layout.jade)*
@@ -243,7 +240,6 @@ p {
 ```
 
 ###Filtered
-
 If you try to include a Markdown, Stylus, CoffeeScript, or any of the other types of files mentioned in chapter 3, you have to use filters. For example, if you use `include:md file.md` then `file.md` will be compiled as Markdown and the resulting HTML will be injected into the template.
 
 For example:
@@ -296,7 +292,6 @@ p {
 ...And you can see that both of the included files are compiled and inserted into the file.
 
 ###Jade
-
 If you are including a Jade file, then rather than compiling it into HTML, it will be parsed and the AST (Abstract Syntax Tree) will be injected into the spot where the include was. This means that even variables behave as if they were written in the same file. Also, if you're including a Jade file, you don't need to use the `.jade` file extension.
 
 *book-format.jade*
@@ -322,5 +317,4 @@ for book in books
 And, as you can see, `book.title` is available even though it is accessed in code that was written in `book-format.jade`.
 
 ##Summary
-
 In this chapter we learned about the last part major of the language: template inheritance, which is done through a block system. In addition, we learned about `include`, a related keyword that lets us include non-Jade files, like scripts and styles.

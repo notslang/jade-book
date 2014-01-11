@@ -84,7 +84,6 @@ Writing JS can start to look ugly and doesn't really match with the indentation-
 Here are a few examples:
 
 ###If / Else / Else If
-
 ```jade
 - name = "Bob"
 if name == "Bob"
@@ -115,7 +114,6 @@ else
 ```
 
 ###Cases
-
 ```jade
 - name = "Bob"
 case name

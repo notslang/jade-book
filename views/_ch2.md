@@ -212,7 +212,6 @@ p(value=['one', 'two', 'three'])
 This isn't incredibly useful unless the object that you're passing has a custom `.toString()`.
 
 ##Shorthands
-
 ###IDs and classes
 IDs and classes are both pretty common attributes, so Jade gives us a shorthand method for writing them. This is similar to the way CSS selectors are written. An example of this is as follows:
 
@@ -263,7 +262,6 @@ Hello Word!
 However, this is possible only as long as there is an ID and/or class(es) where the tag name would normally be.
 
 ##Comments
-
 ###Single line
 Normal HTML comments are pretty verbose, so Jade offers us a much shorter way to write them that looks similar to JavaScript comments.
 

@@ -63,7 +63,6 @@ This section includes
 Because of the vast number of languages that can be used in filters, I'm not going to give examples for all of them (that would get really redundant). But here are the most popular ones:
 
 ###Markdown
-
 ```jade
 :markdown
   Markdown is **much** easier to write than that _ugly_ [HTML](http://www.w3.org/html/‎).
@@ -74,7 +73,6 @@ Because of the vast number of languages that can be used in filters, I'm not goi
 ```
 
 ###CoffeeScript
-
 ```jade
 :coffeescript
   square = (x) -> x * x
@@ -99,7 +97,6 @@ Because of the vast number of languages that can be used in filters, I'm not goi
 ```
 
 ###Stylus
-
 ```jade
 :stylus
   border-radius()
