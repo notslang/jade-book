@@ -1,6 +1,6 @@
 #A Closing Note
 ##Contributing Back to Jade
-Jade is made possible by a wonderful group of volunteers who are passionate about making web development easier. The language was created by TJ Holowaychuk (who also made express, mocha, and over 300 other open source projects) in 2010. Since then, more than X volunteers have joined him in improving Jade. The project is now maintained by primarily by Forbes Lindesay.
+Jade is made possible by a wonderful group of volunteers who are passionate about making web development easier. The language was created by TJ Holowaychuk (who also made express, mocha, and over 300 other open source projects) in 2010. Since then, more than [100 volunteers](https://github.com/visionmedia/jade/graphs/contributors) have joined him in improving Jade. The project is now maintained by primarily by Forbes Lindesay.
 
 All of these contributors deserve a huge thank-you for making Jade happen. Without them, Jade wouldn't be the superpower that it is today.
 
