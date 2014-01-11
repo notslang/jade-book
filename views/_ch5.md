@@ -80,20 +80,18 @@ Because of the vast number of languages that can be used in filters, I'm not goi
     square(x) * x
 ```
 
-```html
-<script type="text/javascript">
-  (function() {
-    var cube, square;
+```js
+(function() {
+  var cube, square;
 
-    square = function(x) {
-      return x * x;
-    };
+  square = function(x) {
+    return x * x;
+  };
 
-    cube = function(x) {
-      return square(x) * x;
-    };
-  }).call(this);
-</script>
+  cube = function(x) {
+    return square(x) * x;
+  };
+}).call(this);
 ```
 
 ###Stylus
@@ -114,22 +112,20 @@ Because of the vast number of languages that can be used in filters, I'm not goi
       border-radius 5px
 ```
 
-```html
-<style type="text/css">
-  body {
-    font: 12px Helvetica, Arial, sans-serif;
-  }
+```css
+body {
+  font: 12px Helvetica, Arial, sans-serif;
+}
 
-  a {
-    color: #800080;
-  }
+a {
+  color: #800080;
+}
 
-  a .button {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-  }
-</style>
+a .button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
 ```
 
 ##Passing arguments
@@ -146,8 +142,8 @@ For example, if we pass the `minify` option to the Stylus filter, then the outpu
     color blue
 ```
 
-```html
-<style type="text/css">p{color:#f00}b{font-weight:bold;color:#00f}</style>
+```css
+p{color:#f00}b{font-weight:bold;color:#00f}
 ```
 
 For a full list of arguements that can be passed, see the [transformers repository](https://github.com/ForbesLindesay/transformers).
