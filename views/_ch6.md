@@ -124,6 +124,3 @@ mixin list()
 ```
 
 In the above example, we define a mixin (`list`) that appears to take no arguments, but in fact iterates over an array created from the `arguments` object. It is worth noting that we cannot iterate over `arguments` itself, because it is **not a real array**. Instead, we use `- var args = Array.prototype.slice.call(arguments);` to make an array called `args` from the `arguments` object.
-
-##Summary
-We just finished learning about mixins, a way to write reusable functions inside of templates in order to reduce redundancy.

@@ -240,6 +240,3 @@ The preceding code returns the following string of HTML:
 This will error out if the client-side Jade utilities are not included.
 
 ------------------------
-
-##Summary
-In this chapter, we moved on from the basics of writing Jade, to feeding data into templates. After all, we could hardly call Jade a templating language if we couldn't put anything in our templates. So, we covered both the syntax used to output variables (such as interpolation), and how to actually send the data to the renderer.

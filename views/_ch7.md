@@ -315,6 +315,3 @@ for book in books
 ```
 
 And, as you can see, `book.title` is available even though it is accessed in code that was written in `book-format.jade`.
-
-##Summary
-In this chapter we learned about the last part major of the language: template inheritance, which is done through a block system. In addition, we learned about `include`, a related keyword that lets us include non-Jade files, like scripts and styles.

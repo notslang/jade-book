@@ -219,6 +219,3 @@ p #{title}
 ```
 
 If interpolation worked in code, then it would print out `Hello foo`. The reason why interpolation can't be used in code blocks is because vanilla JS has no interpolation, and very little processing is done to the code before it is executed (even the built in shorthands). So allowing interpolation in these places would require extensive re-writing of the code blocks during compilation. However, once Template Strings are implemented in ES6 (the next version of JavaScript) this won't be an issue.
-
-##Summary
-Often, we need a bit more power than just outputting the text that's passed to our templates. For that, we have logical operations that we can use in templates. In this chapter, we covered flow control structures, like `if`, `else`, `case`, `for`, and `while`. Also, we discussed adding more advanced logic with raw JavaScript.

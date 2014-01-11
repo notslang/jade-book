@@ -151,7 +151,3 @@ For example, if we pass the `minify` option to the Stylus filter, then the outpu
 ```
 
 For a full list of arguements that can be passed, see the [transformers repository](https://github.com/ForbesLindesay/transformers).
-
-##Summary
-In this chapter, we covered our first "feature" of the Jade language: filters, a way to automatically compile other preprocessed languages (like Stylus, Markdown, or CoffeeScript) directly in templates.
-

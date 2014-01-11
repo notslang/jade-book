@@ -104,6 +104,3 @@ Although the Jade compiler is fully capable of compiling projects on its own, in
 ![](img/roots.png) ![](img/grunt.png)
 
 For example, roots can recompile Jade automatically each time you save it and even refresh an in-browser preview of that page. Continuous recompilation helps you notice errors sooner and roots helps you avoid the hassle of manually running a command to recompile.
-
-##Summary
-We just finished taking a look at some of the best practices to follow when organizing Jade projects. Also, we looked at the use of 3rd party tools to automate tasks.

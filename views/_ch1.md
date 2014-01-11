@@ -157,7 +157,3 @@ buf.push("<h1>Some Jade</h1>");;return buf.join("");
 ```
 
 The JS resulting from that could still be optimized a little bit more (and likely will be in future versions of the compiler) but since it's just machine-generated JS, it's not a huge issue. The important part is that this JS can be executed on the client-side to render templates dynamically. This will be covered more in chapter 4.
-
-##Summary
-In this chapter, we learned the idea behind preprocessors, and why Jade is awesome. Also, we learned the process Jade uses to compile templates, and how to install/use Jade.
-

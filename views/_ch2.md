@@ -454,6 +454,3 @@ doctype html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
 You may notice `!!!` used instead of `doctype` in old Jade code. This used to be a standard shorthand for doctypes, but `!!!` is now deprecated because it isn't expressive enough.
 
 ------------------------
-
-##Summary
-In this chapter, we dived into the language itself, covering the very basics of the syntax. This included how indentation-based syntaxes work and how to write tags, text, attributes, comments, and some nifty shorthands for classes, IDs, and doctypes.
