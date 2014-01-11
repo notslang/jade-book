@@ -1,10 +1,10 @@
 #Filters
 Much like how Jade is better than writing HTML, there are preprocessed languages for writing other languages. These include languages that compile into CSS, JS, and even specialized subsets of HTML for basic formatting. This book will not attempt to teach any of these to you because, honestly there are already great resources out there for learning all of them. However, it is worth mentioning these languages because Jade has a feature called "filters" that allows you to use several of them right inside your templates.
 
-##The Full List
+##The full list
 Thanks to a library called "transformers" by Forbes Lindesay, Jade supports a huge number of these preprocessed languages. You need to install the individual language compilers for most of the transformers, but they're usually pretty easy to install since they're almost all contained in npm modules like the Jade compiler that you installed in chapter 1.
 
-###Template Engines
+###Template engines
 It is a little strange to use another template engine inside of Jade code, but it is nevertheless allowed because the underlying transformers library supports it.
 
  - atpl - Compatible with twig templates
@@ -32,7 +32,7 @@ It is a little strange to use another template engine inside of Jade code, but i
  - walrus - A bolder kind of mustache
  - whiskers - logic-less focused on readability
 
-###Stylesheet Languages
+###Stylesheet languages
 These languages can be extremely useful for writing and generating CSS, but normally are difficult to compile when they are inside of other files. Jade solves this problem by allowing you to use them through filters.
 
  - less - LESS extends CSS with dynamic behavior such as variables, mixins, operations and functions.
@@ -132,7 +132,7 @@ Because of the vast number of languages that can be used in filters, I'm not goi
 </style>
 ```
 
-##Passing Arguments
+##Passing arguments
 Since compilers often take options, Jade has a syntax for passing options to filters. The syntax is the same as specifying attributes for tags, except 
 
 For example, if we pass the `minify` option to the Stylus filter, then the output is minified, rather than pretty-printed as it was in the example above:

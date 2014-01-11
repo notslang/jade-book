@@ -1,4 +1,4 @@
-#Basic Syntax
+#Basic syntax
 Now that you know what Jade actually is, let's enter that part of the book where you start to learn how to write Jade.
 
 ##Significance of whitespace
@@ -178,7 +178,7 @@ Jade `0.35.0` (released 2013-08-21) added support for space-separated attributes
 
 ------------------------
 
-###Passing Objects as Attributes
+###Passing objects as attributes
 Not only can you pass strings as attributes, but if you pass objects they will be turned into the most useful representation for that particular attribute. For example, passing an array to the `class` attribute will be interpreted as a list of classes:
 
 ```jade

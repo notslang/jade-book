@@ -1,10 +1,10 @@
-#Logic in Templates
+#Logic in templates
 Ok, now that we know how to send data to templates and display them in the resulting HTML, we can actually make useful templates. However, sometimes we need a little more power. For that, we turn to logical operations.
 
-##Adding Logic with JavaScript
+##Adding logic with JavaScript
 As I've already mentioned, Jade compiles into JS and allows you to use JS directly in your template. So, we can use any of the logical operators that JS provides to build our markup.
 
-###If / Else
+###If / else
 The most basic logical operator is the if statement:
 
 ```jade
@@ -40,7 +40,7 @@ Switches don't work. Use the `case` statement that is explained in the next sect
 ------------------------
 
 
-###For Loops
+###For loops
 Loops can be used to iterate over lists, or repeat elements a certain number of times.
 
 ```jade
@@ -60,7 +60,7 @@ ul
 </ul>
 ```
 
-###Complex Operations
+###Complex operations
 Generally, you should keep complex operations outside of your templates, but it's worth noting that you can do pretty extensive data manipulation.
 
 ```jade
@@ -78,12 +78,12 @@ p="this is a title".title_case()
 ```
 
 
-##Built-in Logical Operators
+##Built-in logical operators
 Writing JS can start to look ugly and doesn't really match with the indentation-based syntax that Jade uses, so we have several built-in logical operators that do the same thing, but are easier to write.
 
 Here are a few examples:
 
-###If / Else / Else If
+###If / else / else if
 ```jade
 - name = "Bob"
 if name == "Bob"
@@ -129,7 +129,7 @@ case name
 <p>Hi Bob!</p>
 ```
 
-###Each Loops
+###Each loops
 Each is used for iterating over arrays and objects, and is written in the form: `each VAL[, KEY] in OBJ`
 
 ```jade
@@ -186,7 +186,7 @@ You can also use `for` in place of `each` - they mean the same thing
 
 ------------------------
 
-###While Loops
+###While loops
 ```jade
 - list = ["one","two", 'three']
 - i = 0
@@ -205,7 +205,7 @@ ul
 </ul>
 ```
 
-##A Warning About Interpolation
+##A warning about interpolation
 Interpolation cannot be used in code blocks, including vanilla JS and the builtin variants. For example:
 
 ```jade

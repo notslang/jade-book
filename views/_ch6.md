@@ -3,10 +3,10 @@ Mixins are small, encapsulated pieces of code that are reusable throughout the t
 
 They are very similar to functions in JS - in fact they compile into slightly modified functions and corresponding function calls. This means that almost everything that you already know about functions in JS carries over to "mixins" in Jade.
 
-##Syntax & Mechanics
+##Syntax & mechanics
 First off, we're going to talk about how to write mixins; the syntax that they use, and what it does. Also, since we've already covered logical operations in templates, we can use those in mixins throughout the examples.
 
-###Defining Mixins
+###Defining mixins
 Mixins definitions don't output any HTML and are defined using the following syntax:
 
 ```jade
@@ -16,7 +16,7 @@ mixin book(name, price)
 
 where `book` is the name of the mixin, and `name` & `price` are both named arguments. The indented block of Jade gets executed in its own scope, where the variables `name` and `price` are both defined with the args that are passed. So basically: it works just like you would expect a function to work.
 
-###Calling Mixins
+###Calling mixins
 The syntax for calling mixins is also similar to that of function calls, except we prefix the function name with a `+` to say that it isn't a tag (which can look quite similar). So using our `book` mixin, we can call it with the following:
 
 ```jade
@@ -47,7 +47,7 @@ p
 <p>(&#596;) - Sean Lang - 2013</p>
 ```
 
-###Passing Blocks
+###Passing blocks
 Besides just being able to pass arguments, you can also pass entire blocks to a mixin:
 
 ```jade
@@ -82,7 +82,7 @@ The block that will be passed to the mixin is whatever indented block comes afte
 
 At the same time, the mixin also takes the `name` arg which is used to make the id and label.
 
-##Another Warning About Interpolation
+##Another warning about interpolation
 Back in chapter 3 I mentioned that interpolation doesn't work in the arguments used to call a mixin. Now that we know how to write mixins we need to be careful not to use interpolation when we're calling them. For example:
 
 ```jade
@@ -102,7 +102,7 @@ If interpolation did work in mixin arguments then this would output `This is my 
 
 This gotcha has existed since Jade's creation, and has been discussed on multiple occasions (see: https://github.com/visionmedia/jade/issues/693) but probably won't be changed any time soon.
 
-##Arguments Object
+##Arguments object
 Just as the `arguments` object is a local variable available in JavaScript objects, it is available in Jade mixins. In fact, it is used frequently in Jade to make mixins that accept a variable number of args.
 
 ```jade

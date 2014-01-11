@@ -1,5 +1,5 @@
-#Template Inheritance
-##What It's Used For
+#Template inheritance
+##What it's used for
 Sites generally have a basic layout which is the same across all pages, and then small "blocks" of HTML that make each page unique. To prevent you from needing to repeat this base layout in every single file, Jade uses a block system that lets you insert interchangeable blocks into templates.
 
 ##Blocks
@@ -44,7 +44,7 @@ html
 
 By default, the only script that's on the page is jQuery; there are no styles, and in the body there is a short message explaining that there's no content on the page. That's pretty boring, so next we're going to learn how to extend this page to make it better.
 
-###Blocks Don't Provide Encapsulation
+###Blocks don't provide encapsulation
 Variables defined in blocks can be accessed outside of blocks. For example:
 
 ```jade
@@ -162,7 +162,7 @@ else
 
 This is a rather "edge" case because there is usually no reason to structure your templates in such a way that render-time logic influences compile-time statements. Thus, this incompatibility will probably not be fixed.
 
-###Extra Things in Extenders
+###Extra things in extenders
 If you have things, other than blocks, in a template which extends another template, they will be ignored. For example:
 
 *minimal_layout.jade*

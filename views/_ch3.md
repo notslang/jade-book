@@ -1,4 +1,4 @@
-#Feeding Data into Templates
+#Feeding data into templates
 So far, we've largely ignored one of the most important parts of templating languages—the ability to feed data into them. But don't worry, for now we will learn interpolation and passing data to templates!
 
 ##Syntax

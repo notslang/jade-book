@@ -36,7 +36,7 @@ html
 
 Both of the preceding code examples mean the exact same thing, except one is much shorter. This is Jade, a powerful, terse templating language that is compiled into HTML. In addition to the syntactical improvements, Jade lets you simplify redundant markup with programmed logic. Also, it allows you create templates which can take in and display data.
 
-##Why Should I Preprocess?
+##Why should I preprocess?
 Jade really is just one option in a whole class of preprocessors; to have a complete understanding of Jade, we should understand why this class of languages was created.
 
 Preprocessors are high-level languages that offer syntactical and functional improvements over their "vanilla" (non-preprocessed) counterparts. These high-level languages allow you to write the markup in a better language that is compiled down to normal (vanilla) HTML. Thus, they are there purely to improve your productivity, without affecting their compatibility with existing technologies.
@@ -45,14 +45,14 @@ Preprocessing, in general, offers many benefits over writing vanilla HTML. SGML 
 
 Occasionally, people will avoid preprocessing because it *adds another step*, another layer of abstraction to the end result. However, improvements in code readability and ease of writing far outweigh the inconvenience of this additional step. Furthermore, anything more complex than a static site will require a "build" step anyway, to inject whatever dynamic content the site has.
 
-##How Jade Preprocesses
+##How Jade preprocesses
 In the case of Jade, this preprocessing is done by compiling templates into JS and then rendering them to HTML:
 
 ![](img/Process.svg)
 
 Because Jade's compiled templates really are just JavaScript functions that output HTML, they can be rendered on both the server and in the browser.
 
-##Comparison with Other Preprocessors
+##Comparison with other preprocessors
 As I mentioned earlier, there are many preprocessors and templating solutions, so it is worth discussing why those may be inadequate.
 
 ###HAML
@@ -75,7 +75,7 @@ Mustache is another JS-based templating language, and like Jade it compiles into
 
 There are many other templating languages, but they all suffer from pretty much the same issues, or they just haven't gained a large enough supporting community to be recognized as a major language yet.
 
-##Installation Instructions
+##Installation instructions
 To install the Jade compiler, you first need to have Node.js installed. This is a JavaScript interpreter based on V8, that lets you run JS outside of the browser. The installation instructions are available at http://nodejs.org/. Once you have Node.js installed, you can use npm (Node.js Package Manager) to install Jade from the terminal:
 
 ```bash
