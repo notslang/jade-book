@@ -5,8 +5,8 @@
 ## The Book
 I wrote this book to provide a solid source of documentation for people
 looking to learn how to use Jade and ended up publishing it as a "real book"
-via Packt Publishing. You can buy it [here](http://www.packtpub.com/create-
-dynamic-web-pages-using-jade/book)
+via Packt Publishing. You can buy it
+[here](http://www.packtpub.com/create-dynamic-web-pages-using-jade/book)
 
 ## The Source
 The whole book is written in Markdown, and (of course) a little Jade to hold
