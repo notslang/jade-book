@@ -1,8 +1,12 @@
 #Logic in templates
-Ok, now that we know how to send data to templates and display them in the resulting HTML, we can actually make useful templates. However, sometimes we need a little more power. For that, we turn to logical operations.
+Ok, now that we know how to send data to templates and display them in the
+resulting HTML, we can actually make useful templates. However, sometimes we
+need a little more power. For that, we turn to logical operations.
 
 ##Adding logic with JavaScript
-As I've already mentioned, Jade compiles into JS and allows you to use JS directly in your template. So, we can use any of the logical operators that JS provides to build our markup.
+As I've already mentioned, Jade compiles into JS and allows you to use JS
+directly in your template. So, we can use any of the logical operators that JS
+provides to build our markup.
 
 ###If / else
 The most basic logical operator is the if statement:
@@ -34,14 +38,15 @@ h1 #{greeting} #{name}
 ```
 
 ------------------------
-**ProTip**
-Switches don't work. Use the `case` statement that is explained in the next section.
+**ProTip** Switches don't work. Use the `case` statement that is explained in
+the next section.
 
 ------------------------
 
 
 ###For loops
-Loops can be used to iterate over lists, or repeat elements a certain number of times.
+Loops can be used to iterate over lists, or repeat elements a certain number
+of times.
 
 ```jade
 - list = ['one', 'two', 'three'];
@@ -61,7 +66,8 @@ ul
 ```
 
 ###Complex operations
-Generally, you should keep complex operations outside of your templates, but it's worth noting that you can do pretty extensive data manipulation.
+Generally, you should keep complex operations outside of your templates, but
+it's worth noting that you can do pretty extensive data manipulation.
 
 ```jade
 - String.prototype.title_case = function() {
@@ -79,7 +85,9 @@ p="this is a title".title_case()
 
 
 ##Built-in logical operators
-Writing JS can start to look ugly and doesn't really match with the indentation-based syntax that Jade uses, so we have several built-in logical operators that do the same thing, but are easier to write.
+Writing JS can start to look ugly and doesn't really match with the
+indentation-based syntax that Jade uses, so we have several built-in logical
+operators that do the same thing, but are easier to write.
 
 Here are a few examples:
 
@@ -130,7 +138,8 @@ case name
 ```
 
 ###Each loops
-Each is used for iterating over arrays and objects, and is written in the form: `each VAL[, KEY] in OBJ`
+Each is used for iterating over arrays and objects, and is written in the
+form: `each VAL[, KEY] in OBJ`
 
 ```jade
 - list = ["one","two", 'three']
@@ -181,8 +190,8 @@ select
 ```
 
 ------------------------
-**ProTip**
-You can also use `for` in place of `each` - they mean the same thing
+**ProTip** You can also use `for` in place of `each` - they mean the same
+thing
 
 ------------------------
 
@@ -206,7 +215,8 @@ ul
 ```
 
 ##A warning about interpolation
-Interpolation cannot be used in code blocks, including vanilla JS and the builtin variants. For example:
+Interpolation cannot be used in code blocks, including vanilla JS and the
+builtin variants. For example:
 
 ```jade
 - var there = "foo"
@@ -218,4 +228,10 @@ p #{title}
 <p>Hello #{there}</p>
 ```
 
-If interpolation worked in code, then it would print out `Hello foo`. The reason why interpolation can't be used in code blocks is because vanilla JS has no interpolation, and very little processing is done to the code before it is executed (even the built in shorthands). So allowing interpolation in these places would require extensive re-writing of the code blocks during compilation. However, once Template Strings are implemented in ES6 (the next version of JavaScript) this won't be an issue.
+If interpolation worked in code, then it would print out `Hello foo`. The
+reason why interpolation can't be used in code blocks is because vanilla JS
+has no interpolation, and very little processing is done to the code before it
+is executed (even the built in shorthands). So allowing interpolation in these
+places would require extensive re-writing of the code blocks during
+compilation. However, once Template Strings are implemented in ES6 (the next
+version of JavaScript) this won't be an issue.
