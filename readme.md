@@ -1,5 +1,7 @@
 # Web Development With Jade
 
+![](https://raw.githubusercontent.com/slang800/jade-book/master/assets/img/cover.png)
+
 ## The Book
 I wrote this book to provide a solid source of documentation for people
 looking to learn how to use Jade and ended up publishing it as a "real book"
