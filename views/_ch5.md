@@ -1,4 +1,4 @@
-#Filters
+# Filters
 Much like how Jade is better than writing HTML, there are preprocessed
 languages for writing other languages. These include languages that compile
 into CSS, JS, and even specialized subsets of HTML for basic formatting. This
@@ -7,14 +7,14 @@ already great resources out there for learning all of them. However, it is
 worth mentioning these languages because Jade has a feature called "filters"
 that allows you to use several of them right inside your templates.
 
-##The full list
+## The full list
 Thanks to a library called "transformers" by Forbes Lindesay, Jade supports a
 huge number of these preprocessed languages. You need to install the
 individual language compilers for most of the transformers, but they're
 usually pretty easy to install since they're almost all contained in npm
 modules like the Jade compiler that you installed in chapter 1.
 
-###Template engines
+### Template engines
 It is a little strange to use another template engine inside of Jade code, but
 it is nevertheless allowed because the underlying transformers library
 supports it.
@@ -45,7 +45,7 @@ supports it.
  - walrus - A bolder kind of mustache
  - whiskers - logic-less focused on readability
 
-###Stylesheet languages
+### Stylesheet languages
 These languages can be extremely useful for writing and generating CSS, but
 normally are difficult to compile when they are inside of other files. Jade
 solves this problem by allowing you to use them through filters.
@@ -55,7 +55,7 @@ solves this problem by allowing you to use them through filters.
  - stylus - revolutionary CSS generator making braces optional
  - sass - Sassy CSS
 
-###Minifiers
+### Minifiers
 The minifiers are not incredibly useful, but like the template engines, they
 are supported by the underlying library and are therefore worth mentioning.
 
@@ -64,7 +64,7 @@ are supported by the underlying library and are therefore worth mentioning.
  - uglify-css - No need to install anything, just minifies/beautifies CSS
  - ugilify-json - No need to install anything, just minifies/beautifies JSON
 
-###Other
+### Other
 This section includes
  - cdata - No need to install anything, just wraps input as
    `<![CDATA[${INPUT_STRING]]>` with the standard escape for `]]>
@@ -84,12 +84,12 @@ This section includes
  - component-css - npm install component-builder options: {development: false}
  - html2jade - npm install html2jade - Converts HTML back into Jade
 
-##Examples
+## Examples
 Because of the vast number of languages that can be used in filters, I'm not
 going to give examples for all of them (that would get really redundant). But
 here are the most popular ones:
 
-###Markdown
+### Markdown
 ```jade
 :markdown
   Markdown is **much** easier to write than that _ugly_
@@ -101,7 +101,7 @@ here are the most popular ones:
 <a href="http://www.w3.org/html/‎">HTML</a>.</p>
 ```
 
-###CoffeeScript
+### CoffeeScript
 ```jade
 :coffeescript
   square = (x) -> x * x
@@ -123,7 +123,7 @@ here are the most popular ones:
 }).call(this);
 ```
 
-###Stylus
+### Stylus
 ```jade
 :stylus
   border-radius()
@@ -157,7 +157,7 @@ a .button {
 }
 ```
 
-##Passing arguments
+## Passing arguments
 Since compilers often take options, Jade has a syntax for passing options to
 filters. The syntax is the same as specifying attributes for tags, except
 

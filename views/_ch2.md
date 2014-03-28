@@ -1,8 +1,8 @@
-#Basic syntax
+# Basic syntax
 Now that you know what Jade actually is, let's enter that part of the book
 where you start to learn how to write Jade.
 
-##Significance of whitespace
+## Significance of whitespace
 Rather than using opening/closing tags to delimit the start/end of blocks,
 Jade uses indentation. This can be a little strange if you're used to
 languages where white space doesn't matter (such as JS, CSS, and of course
@@ -42,7 +42,7 @@ language like Jade.
 
 ------------------------
 
-##Tags
+## Tags
 Since Jade is indentation-based, there are no end tags, and there are no `<`s
 or `>`s to surround tags, because those are lame and ugly. The name of the tag
 is all that you need, and it is the first text on the line. Consider the
@@ -83,11 +83,11 @@ span
 <span></span>
 ```
 
-###Text and blocks of text
+### Text and blocks of text
 Tags are pretty boring if they don't have any content, so Jade gives us three
 ways of putting text in tags.
 
-###Text on the same line
+### Text on the same line
 You can put the text directly after the tag name (separated by a space) as
 follows:
 
@@ -99,7 +99,7 @@ p Hello Word!
 <p>Hello Word!</p>
 ```
 
-###Text blocks
+### Text blocks
 For large bodies of text, putting it on the same line isn't very practical, so
 we have text blocks. These are indicated by a leading `|` (pipe) character.
 
@@ -132,7 +132,7 @@ p
 </p>
 ```
 
-###Shorthand text blocks
+### Shorthand text blocks
 If all you have is a big block of text or code, adding all those pipe
 characters can be a pain. So Jade provides a shorthand method for indicating
 that all the nested code in an element are text blocks. This is represented by
@@ -153,7 +153,7 @@ p.
 </p>
 ```
 
-##In-line HTML
+## In-line HTML
 It's also perfectly fine to put in-line HTML in any of those text blocks as
 shown in the following example:
 
@@ -174,7 +174,7 @@ p.
 </p>
 ```
 
-##Attributes
+## Attributes
 Attributes are also pretty important, so here's how to write those:
 
 ```jade
@@ -208,7 +208,7 @@ this book will use comma-delimited attributes.
 
 ------------------------
 
-###Passing objects as attributes
+### Passing objects as attributes
 Not only can you pass strings as attributes, but if you pass objects they will
 be turned into the most useful representation for that particular attribute.
 For example, passing an array to the `class` attribute will be interpreted as
@@ -248,9 +248,9 @@ p(value=['one', 'two', 'three'])
 This isn't incredibly useful unless the object that you're passing has a
 custom `.toString()`.
 
-##Shorthands
+## Shorthands
 
-###IDs and classes
+### IDs and classes
 IDs and classes are both pretty common attributes, so Jade gives us a
 shorthand method for writing them. This is similar to the way CSS selectors
 are written. An example of this is as follows:
@@ -276,7 +276,7 @@ Pretty familiar, eh? IDs are just prefixed with a `#` (pound symbol) and
 classes are prefixed with `.` (a peroid). These may be put in any order after
 the tag name with any number of classes.
 
-###Automatic div
+### Automatic div
 Because the `div` tags are used so frequently, Jade offers a shorthand way for
 writing them - by omitting the tag, Jade assumes you want to use a `div` tag;
 therefore, the following code:
@@ -306,9 +306,9 @@ Hello Word!
 However, this is possible only as long as there is an ID and/or class(es)
 where the tag name would normally be.
 
-##Comments
+## Comments
 
-###Single line
+### Single line
 Normal HTML comments are pretty verbose, so Jade offers us a much shorter way
 to write them that looks similar to JavaScript comments.
 
@@ -327,7 +327,7 @@ use silent comments by adding a `-` (hyphen) after `//`.
 //- a silent single line comment
 ```
 
-###Block comments
+### Block comments
 But of course, we need to be able to comment out multiple lines too; for that,
 we use block comments. If you indent a block after a comment, that block will
 be added to the comment too. An example of this is as follows:
@@ -369,7 +369,7 @@ And of course, silent comments work here too:
   p And me too.
 ```
 
-##Block expansion
+## Block expansion
 When each tag only has one tag nested under it, it can be a little annoying to
 have a new line for each one of them:
 
@@ -413,7 +413,7 @@ ul: li.first: b: a(href='#') foo
 But that is really hard to read, so please, *never* do that unless you have a
 very good reason.
 
-##Doctypes
+## Doctypes
 Doctypes can be really long. Naturally Jade gives us a much shorter way to
 write them.
 

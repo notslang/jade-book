@@ -1,9 +1,9 @@
-#What is Jade?
+# What is Jade?
 Jade is a templating language and a shorter, more elegant way to write HTML.
 If you are just looking for a good way to create templates, or you want to
 ditch HTML's ugly syntax, Jade can help you.
 
-##Markup like poetry
+## Markup like poetry
 Let's start with a simple example. First we have HTML, and then the same thing
 rewritten in Jade.
 
@@ -43,7 +43,7 @@ compiled into HTML. In addition to the syntactical improvements, Jade lets you
 simplify redundant markup with programmed logic. Also, it allows you create
 templates which can take in and display data.
 
-##Why should I preprocess?
+## Why should I preprocess?
 Jade really is just one option in a whole class of preprocessors; to have a
 complete understanding of Jade, we should understand why this class of
 languages was created.
@@ -68,7 +68,7 @@ additional step. Furthermore, anything more complex than a static site will
 require a "build" step anyway, to inject whatever dynamic content the site
 has.
 
-##How Jade preprocesses
+## How Jade preprocesses
 In the case of Jade, this preprocessing is done by compiling templates into JS
 and then rendering them to HTML:
 
@@ -77,11 +77,11 @@ and then rendering them to HTML:
 Because Jade's compiled templates really are just JavaScript functions that
 output HTML, they can be rendered on both the server and in the browser.
 
-##Comparison with other preprocessors
+## Comparison with other preprocessors
 As I mentioned earlier, there are many preprocessors and templating solutions,
 so it is worth discussing why those may be inadequate.
 
-###HAML
+### HAML
 HAML is a very popular, beautiful templating language that was made to replace
 ERB (Ruby's default templating system) with a more beautiful abstracted markup
 language. In fact, HAML was one of the major influences on the creation of
@@ -96,7 +96,7 @@ into JS, so it couldn't be used to write templates that are evaluated on the
 client side. However, now there are several JS implementations of HAML, the
 most popular being [haml-js](https://github.com/creationix/haml-js).
 
-###PHP
+### PHP
 PHP does not offer any syntactical improvements and must be rendered server
 side, so it may not be the first thing that comes to mind when discussing
 these types of languages. However, it is currently the most popular HTML
@@ -108,7 +108,7 @@ complete object-oriented programming language. This is a major issue because
 it encourages the mixing of business logic with templating logic. Combining
 this with PHP's already awful design, it makes for some pretty horrific code.
 
-###Jinja2
+### Jinja2
 Jinja2 is a templating language for Python. Like PHP, it doesn't have any
 syntactical improvements and must be rendered server side. Unlike PHP, it has
 a sensible language design, block-based operations, and it encourages you to
@@ -116,7 +116,7 @@ keep most of the logic outside of templates. This makes it a good, general-
 purpose templating language, but it lacks the HTML-specific syntax
 optimizations that Jade and HAML have.
 
-###Mustache
+### Mustache
 Mustache is another JS-based templating language, and like Jade it compiles
 into JavaScript, meaning it can be rendered client side. However, it too lacks
 HTML-specific syntactical improvements.
@@ -125,7 +125,7 @@ There are many other templating languages, but they all suffer from pretty
 much the same issues, or they just haven't gained a large enough supporting
 community to be recognized as a major language yet.
 
-##Installation instructions
+## Installation instructions
 To install the Jade compiler, you first need to have Node.js installed. This
 is a JavaScript interpreter based on V8, that lets you run JS outside of the
 browser. The installation instructions are available at http://nodejs.org/.
@@ -139,7 +139,7 @@ $ npm install jade -g
 (the `-g` installs Jade globally - without it you wouldn't be able to use the
 `jade` command)
 
-##Compiling Jade
+## Compiling Jade
 Now that you have Jade installed, you can use the `jade` command to compile
 Jade files. For example, if we put some Jade in a file:
 

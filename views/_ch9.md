@@ -1,6 +1,6 @@
-#A Closing Note
+# A Closing Note
 
-##Contributing Back to Jade
+## Contributing Back to Jade
 Jade is made possible by a wonderful group of volunteers who are passionate
 about making web development easier. The language was created by TJ
 Holowaychuk (who also made express, mocha, and over 300 other open source

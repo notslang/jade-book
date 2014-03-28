@@ -1,13 +1,13 @@
-#Feeding data into templates
+# Feeding data into templates
 So far, we've largely ignored one of the most important parts of templating
 languages—the ability to feed data into them. But don't worry, for now we will
 learn interpolation and passing data to templates!
 
-##Syntax
+## Syntax
 There are several syntactical elements made specifically for displaying
 content that is passed to the template. Here we will go over what those are.
 
-##Defining variables
+## Defining variables
 First, we're going to start with learning how to define variables inside a
 template. This is common practice when you are looking to make redundant
 aspects of a template easy to change. So, here is the syntax for defining a
@@ -21,7 +21,7 @@ If you've worked with JavaScript, this should look very familiar because it _is_
 JS. In fact, any JS can be executed in a template, it just needs a dash and a
 space in front of it.
 
-##Interpolation everywhere!
+## Interpolation everywhere!
 Now how about actually putting the data into something? For this, we can use
 interpolation:
 
@@ -93,7 +93,7 @@ cases, but usually avoid it.
 
 ------------------------
 
-##Using variables without interpolation
+## Using variables without interpolation
 Writing out the full interpolation syntax when you don't need to actually put
 a variable inside of a body of text (and have all the text for that attribute
 or tag directly in the variable) can be a bit annoying. So naturally, Jade
@@ -144,7 +144,7 @@ p= content
 In each of these instances, we just use an `=` (equal to sign) to indicate
 that the attribute or block should be the full contents of the variable.
 
-##Escaping
+## Escaping
 By default, Jade encodes HTML characters for security, so:
 
 ```jade
@@ -198,12 +198,12 @@ exclamation point serve as a reminder: letting the content go through the
 template without escaping can compromise the security of your entire site if
 that content comes from an untrusted/insecure source.
 
-##Sending the variables to the compiler
+## Sending the variables to the compiler
 Defining all your variables inside your templates would be pretty limiting, so
 there are a few ways in which we can send data from external sources to
 templates.
 
-###Compiler arg
+### Compiler arg
 The easiest way to send data to the Jade compiler is by just providing it in a
 JSON object that gets passed to the compiler as an argument.
 
@@ -224,7 +224,7 @@ JSON object that gets passed to the compiler as an argument.
     <p>this text is coming through the terminal</p>
     ```
 
-###Programmatically
+### Programmatically
 Sending variables to Jade programmatically is a bit harder, but offers more
 flexibility, such as being able to perform rendering within the browser. So,
 using the same initial file (`file.jade`):

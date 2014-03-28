@@ -1,4 +1,4 @@
-#Organizing Jade projects
+# Organizing Jade projects
 Now that you know how to use all the things that Jade can do, here's when you
 should use them.
 
@@ -7,7 +7,7 @@ itself doesn't impose much structure on your project. However, there are some
 conventions you should follow, as they will typically make your code easier to
 manage. This chapter will cover those conventions and best practices.
 
-##General best practices
+## General best practices
 Most of the good practices that are used when writing HTML carry over to Jade.
 Some of these include:
 
@@ -20,7 +20,7 @@ The list goes on, but these are all things you should already be familiar
 with. So now we're going to discuss some practices that are more Jade-
 specific.
 
-###Keeping logic out of templates
+### Keeping logic out of templates
 When working with a templating language, like Jade, that allows you to use
 advanced logical operations, separation of concerns (SoC) becomes an important
 practice. In this context, SoC is the separation of business and
@@ -50,7 +50,7 @@ structure of the JSON that your business layer produces.
 
 -----------------------
 
-###Inlining
+### Inlining
 When writing HTML, it is commonly advised that you don't use inline styles or
 scripts because it is harder to maintain. This advice still applies to the way
 you write your Jade.
@@ -76,7 +76,7 @@ optimizations. For example, build-tools like [AssetGraph](https://github.com
 /One-com/assetgraph) can do all the inlining, minifying, and combining you
 need, without you needing to put code to do so in your templates.
 
-###Minification
+### Minification
 Looking back to chapter 5, you'll remember that we can pass arguments through
 filters to compilers for things like minifying. This feature is useful for
 small projects, for which you might not want to setup a full build-tool. Also,
@@ -87,7 +87,7 @@ best solution for minifying. Just like inlining it is much better to do this
 with a tool like AssetGraph. That way your markup is free of "build
 instructions".
 
-###Removing style-induced redundancy
+### Removing style-induced redundancy
 A lot of redundant markup is added just to make styling easier: we have
 wrappers for every conceivable part of the page, empty divs and spans, and
 plenty of other forms of useless markup. The best way to deal with this stuff
@@ -131,7 +131,7 @@ Which you can then call later in your markup:
 +navbar(['home', 'blog', 'portfolio'])
 ```
 
-###Semantic divisions
+### Semantic divisions
 Sometimes, even though there is no redundancy present, dividing templates into
 separated mixins and blocks can be a good idea. Not only does it provide
 encapsulation (which makes debugging easier), but the division represents a
@@ -142,13 +142,13 @@ sidebar, and main content. These could be combined into one monolithic file,
 but putting each in a separate block represents their separation, can make the
 project easier to navigate, and allows each to be extended individually.
 
-###Server-side vs client-side rendering
+### Server-side vs client-side rendering
 Since Jade can be used on both the client-side and server-side, we can choose
 to do the rendering of the templates off of the server. However, there are
 costs and benefits associated with each approach, so the decision must be made
 depending on the project.
 
-####Client-side
+#### Client-side
 Using the "Single Page Application" (SPA) design, we can do everything but the
 compilation of the basic HTML structure, on the client-side. This allows for a
 static page which loads content from a dynamic backend, and passes that
@@ -176,7 +176,7 @@ whether it is a full site that is able to function without JS, or just simple
 HTML snapshots, rendered using a headless browser, it is a source of
 additional work.
 
-####Server-side
+#### Server-side
 We can, of course, render everything on the server-side, and just send regular
 HTML to the browser. This is the most backwards compatible, since the site
 will behave just as any static HTML site would, but we don't get any of the
@@ -186,7 +186,7 @@ We could still use some client-side Jade for enhancements, but the idea is the
 same: the majority gets rendered on the server-side, and full HTML pages need
 to be sent when the user navigates to a new page.
 
-###Build systems
+### Build systems
 Although the Jade compiler is fully capable of compiling projects on its own,
 in practice it is often better to use a build system because they can make
 interfacing with the compiler easier. In addition, build systems often help

@@ -1,14 +1,14 @@
-#Logic in templates
+# Logic in templates
 Ok, now that we know how to send data to templates and display them in the
 resulting HTML, we can actually make useful templates. However, sometimes we
 need a little more power. For that, we turn to logical operations.
 
-##Adding logic with JavaScript
+## Adding logic with JavaScript
 As I've already mentioned, Jade compiles into JS and allows you to use JS
 directly in your template. So, we can use any of the logical operators that JS
 provides to build our markup.
 
-###If / else
+### If / else
 The most basic logical operator is the if statement:
 
 ```jade
@@ -44,7 +44,7 @@ the next section.
 ------------------------
 
 
-###For loops
+### For loops
 Loops can be used to iterate over lists, or repeat elements a certain number
 of times.
 
@@ -65,7 +65,7 @@ ul
 </ul>
 ```
 
-###Complex operations
+### Complex operations
 Generally, you should keep complex operations outside of your templates, but
 it's worth noting that you can do pretty extensive data manipulation.
 
@@ -84,14 +84,14 @@ p="this is a title".title_case()
 ```
 
 
-##Built-in logical operators
+## Built-in logical operators
 Writing JS can start to look ugly and doesn't really match with the
 indentation-based syntax that Jade uses, so we have several built-in logical
 operators that do the same thing, but are easier to write.
 
 Here are a few examples:
 
-###If / else / else if
+### If / else / else if
 ```jade
 - name = "Bob"
 if name == "Bob"
@@ -106,7 +106,7 @@ else
 <h1>Hello Bob</h1>
 ```
 
-###Unless
+### Unless
 Jade also provides `unless` which is equivalent to `if (!(expr))`
 
 ```jade
@@ -121,7 +121,7 @@ else
 <h1>Hello Bob</h1>
 ```
 
-###Cases
+### Cases
 ```jade
 - name = "Bob"
 case name
@@ -137,7 +137,7 @@ case name
 <p>Hi Bob!</p>
 ```
 
-###Each loops
+### Each loops
 Each is used for iterating over arrays and objects, and is written in the
 form: `each VAL[, KEY] in OBJ`
 
@@ -195,7 +195,7 @@ thing
 
 ------------------------
 
-###While loops
+### While loops
 ```jade
 - list = ["one","two", 'three']
 - i = 0
@@ -214,7 +214,7 @@ ul
 </ul>
 ```
 
-##A warning about interpolation
+## A warning about interpolation
 Interpolation cannot be used in code blocks, including vanilla JS and the
 builtin variants. For example:
 
