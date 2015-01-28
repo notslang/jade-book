@@ -1,4 +1,8 @@
-# roots v2.1.0
-# Files in this list will not be compiled - minimatch supported
-ignore_files: ['_*', 'readme*', '.gitignore', '.DS_Store']
-ignore_folders: ['.git']
+axis = require 'axis-css'
+autoprefixer = require 'autoprefixer-stylus'
+rupture = require 'rupture'
+
+module.exports =
+  ignores: ['README.md', '**/layout.*', '**/_*', '.gitignore']
+  stylus:
+    use: [axis(), autoprefixer(), rupture()]
